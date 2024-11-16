@@ -2,20 +2,81 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "Albus";
+  src: url("../fonts/Albus.ttf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("../fonts/Gotham-Book.otf");
 }
+
+@font-face {
+  font-family: "Gotham-Bold";
+  src: url("../fonts/Gotham-Bold.ttf");
+}
+
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-slate-100 text-foreground;
+  }
+
+  .hero {
+    background-image: url('../public/test.png');
+    background-size: 1100px;
+    background-repeat: no-repeat;
+  }
+
+  .section2 {
+    background-image: url('../public/section_2.png');
+    background-size: 1100px;
+  }
+
+  .section5 {
+    background-image: url('../public/history_bg.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: bottom right 50px  /* Shift 20px to the left */
+  }
+
+  .section4 {
+    background-image: url('../public/section4_bg.png');
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: bottom 45px left 200px  /* Shift 20px to the left */
+  }
+
+  .section6 {
+    background-image: url('../public/landmarks_bg.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: bottom 45px right -50px  
+  }
+
+  .landmarks {
+    background-image: url('../public/landmarks_bg.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position:bottom right;
+  }
+
+  .nationalday {
+    background-image: url('../public/nationalday_bg.png');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position:bottom left 30%;
+  }
 }
