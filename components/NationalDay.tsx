@@ -29,7 +29,7 @@ const NationalDay = () => {
           className={`w-full md:w-[52%] pt-10 pr-6 pl-6  md:p-20 ${
             locale === "/"
               ? "text-left text-xl md:text-lg   font-Gotham-Book"
-              : "text-right text-xl  md:text-lg  font-GE-SS-Text-Light"
+              : "text-right text-2xl  md:text-lg  font-GE-SS-Text-Light"
           }`}
         />
       </div>
