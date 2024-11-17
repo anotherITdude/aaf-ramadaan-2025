@@ -116,7 +116,7 @@ const Abdulla = () => {
         <div>
           <Image
             className={`max-w-[300px] ${
-              locale === "/" ? "mt-6 md:mt-0 mb-6" : "mt-6 md:mt-0 mb-10"
+              locale === "/" ? "mt-6 md:mt-0 mb-0" : "mt-6 md:mt-0 mb-0"
             }`}
             src={abdulla}
             alt="abdulla"
