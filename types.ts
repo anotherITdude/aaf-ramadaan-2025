@@ -9,6 +9,7 @@ export type Translations = {
   abdulla1: string;
   abdulla2: string;
   abdulla3: string;
+  abdullaComment: string;
   nationalday1: string;
   nationalday2: string;
   nationalday3: string;

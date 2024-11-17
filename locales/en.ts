@@ -12,6 +12,7 @@ export const en: Translations = {
   'abdulla1': 'Celebrating',
   'abdulla2': 'Abdulla Lutfi’s',
   'abdulla3': 'unique local take',
+  'abdullaComment' : 'A celebrated, dynamic Emarati, Abdulla has a passion for creating monochromatic doodles that capture the essence of life in the Emirates with a unique humorous twist.',
   'nationalday1': 'National Day',
   'nationalday2': 'Special',
   'nationalday3': 'Edition',

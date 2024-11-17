@@ -18,24 +18,72 @@ const Abdulla = () => {
   return (
     <Section className="relative">
       <Image
-        className="absolute w-[100px]
-      top-10 right-40
+        className="absolute w-[80px] md:w-[100px]
+        top-[150px] left-10
+      md:top-10 md:left-auto md:right-40
       "
         src={abdulla_glide}
         alt="abdulla"
       />
       <Image
-        className="absolute w-[60px]
-        bottom-40 right-28"
+        className={`
+          ${
+            locale === "/"
+              ? "absolute w-[50px] md:w-[60px] bottom-[29%] right-8 md:bottom-40 md:right-28"
+              : "absolute w-[50px] md:w-[60px] bottom-[24%] right-8 md:bottom-40 md:right-28"
+          }
+          `}
         src={abdulla_parachute}
         alt="abdulla"
       />
-      <div className="flex justify-center items-center min-h-[560px]">
-        <div>
-          <Image className="max-w-[300px]" src={abdulla} alt="abdulla" />
+      <div
+        className="flex flex-col md:flex-row justify-center items-center min-h-[560px]
+      p-6  md:pt-10
+      "
+      >
+        <div
+          className={`flex w-full md:hidden mb-16 flex-col ${
+            locale === "/" ? "font-Albus text-4xl" : "font-Zain-Black text-4xl"
+          }`}
+        >
+          <div
+            dangerouslySetInnerHTML={{ __html: t.abdulla1 }}
+            className={`flex ${
+              locale === "/" ? " justify-start" : "justify-start"
+            }`}
+          />
+          <div
+            dangerouslySetInnerHTML={{ __html: t.abdulla2 }}
+            className={`flex ${
+              locale === "/" ? " justify-center" : "justify-center"
+            }`}
+          />
+          <div
+            dangerouslySetInnerHTML={{ __html: t.abdulla3 }}
+            className={`flex ${
+              locale === "/" ? " justify-end" : "justify-end"
+            }`}
+          />
         </div>
         <div>
-          <div className={`flex flex-col ${locale === "/" ? "font-Albus text-4xl" : "font-Zain-Black text-4xl"}`}>
+          <Image
+            className={` max-w-[300px]
+              ${locale === "/" ?
+              "mt-6 md:mt-0 mb-6" :
+              "mt-6 md:mt-0 mb-10"}
+              `}
+            src={abdulla}
+            alt="abdulla"
+          />
+        </div>
+        <div className="">
+          <div
+            className={` flex-col hidden md:flex ${
+              locale === "/"
+                ? "font-Albus text-4xl"
+                : "font-Zain-Black text-4xl"
+            }`}
+          >
             <div
               dangerouslySetInnerHTML={{ __html: t.abdulla1 }}
               className={`flex ${
@@ -56,9 +104,20 @@ const Abdulla = () => {
             />
           </div>
           <div>
-            <Image 
-              className="max-w-[400px] -ml-10"
-              src={`${locale === "/" ? abdulla_comment.src : abdulla_comment_ar.src}`}
+            <div
+              dangerouslySetInnerHTML={{ __html: t.abdullaComment }}
+              className={`flex  mb-6 md:hidden ${
+                locale === "/"
+                  ? " justify-center text-left items-center text-lg font-Gotham-Book mt-8"
+                  : " text-xl font-GE-SS-Text-Light text-right justify-center mt-8"
+              }`}
+            />
+
+            <Image
+              className=" hidden md:block max-w-[400px] -ml-10"
+              src={`${
+                locale === "/" ? abdulla_comment.src : abdulla_comment_ar.src
+              }`}
               alt="abdulla"
               layout="intrinsic"
               width={400}
