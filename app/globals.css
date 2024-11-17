@@ -37,15 +37,11 @@
   src: url("../fonts/Zain-Black.ttf");
 }
 
-
-
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer base {
-  
 }
 
 @layer base {
@@ -57,50 +53,55 @@ body {
   }
 
   .hero {
-    background-image: url('../public/test.png');
+    background-image: url("../public/test.png");
     background-size: 1100px;
     background-repeat: no-repeat;
   }
 
   .section2 {
-    background-image: url('../public/section_2.png');
+    background-image: url("../public/section_2.png");
     background-size: 1100px;
   }
 
   .section5 {
-    background-image: url('../public/history_bg.png');
+    background-image: url("../public/history_bg.png");
     background-size: 70%;
     background-repeat: no-repeat;
-    background-position: bottom right 50px  /* Shift 20px to the left */
+    background-position: bottom right 50px; /* Shift 20px to the left */
   }
 
   .section4 {
-    background-image: url('../public/section4_bg.png');
+    background-image: url("../public/section4_bg.png");
     background-size: 45%;
     background-repeat: no-repeat;
-    background-position: bottom 45px left 200px  /* Shift 20px to the left */
+    background-position: bottom 45px left 200px; /* Shift 20px to the left */
+  }
+
+  .section4SM {
+    background-image: url("../public/section4_bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom 0px left 00px; /* Shift 20px to the left */
   }
 
   .section6 {
-    background-image: url('../public/landmarks_bg.png');
+    background-image: url("../public/landmarks_bg.png");
     background-size: 70%;
     background-repeat: no-repeat;
-    background-position: bottom 45px right -50px  
+    background-position: bottom 45px right -50px;
   }
 
   .landmarks {
-    background-image: url('../public/landmarks_bg.png');
+    background-image: url("../public/landmarks_bg.png");
     background-size: 80%;
     background-repeat: no-repeat;
-    background-position:bottom right;
+    background-position: bottom right;
   }
 
   .nationalday {
-    background-image: url('../public/nationalday_bg.png');
+    background-image: url("../public/nationalday_bg.png");
     background-size: 60%;
     background-repeat: no-repeat;
-    background-position:bottom left 30%;
+    background-position: bottom left 30%;
   }
-
-  
 }
