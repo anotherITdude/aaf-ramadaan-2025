@@ -32,15 +32,16 @@ const SectionFour = () => {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
             }}
-            className="absolute z-10 -bottom-10 left-0 md:-bottom-0"
-            style={{ maxWidth: '300px', width: '100%' }} // Ensure image doesn't resize unexpectedly
+            className="absolute z-10 -bottom-10 left-0 md:-bottom-0
+            max-w-[280px] md:w-[400px]
+            "
+             // Ensure image doesn't resize unexpectedly
           >
             <Image
               className="w-full"
               src={section_four}
               alt="bg"
-              width={300} // Set a fixed width for the image to ensure consistency
-              height={300} // Set a fixed height to maintain aspect ratio
+               // Set a fixed height to maintain aspect ratio
             />
           </motion.div>
         </div>
