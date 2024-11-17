@@ -13,23 +13,23 @@ const NationalDay = () => {
   const t: Translations = locale === "/" ? en : ar;
   return (
     <Section className="overflow-hidden">
-      <div className=" flex md:min-h-[600px] relative justify-start  items-start">
+      <div className=" flex min-h-[600px] md:min-h-[600px] relative justify-start  items-start">
         <Image
-          className="absolute bottom-0 w-[96%] -right-3 "
+          className="absolute bottom-0 w-full md:w-[96%] md:-right-3 "
           src={bg}
           alt="bg"
         />
         <Image
-          className="absolute top-[15%] right-[15%] w-[100px]"
+          className="absolute bottom-36 md:top-[15%] right-10 md:right-[15%] w-[100px]"
           src={ballon}
           alt="bg"
         />
         <div
           dangerouslySetInnerHTML={{ __html: t.section2Paragraph }}
-          className={`w-[52%] p-20 ${
+          className={`w-full md:w-[52%] pt-10 pr-6 pl-6  md:p-20 ${
             locale === "/"
-              ? "text-left  font-Gotham-Book"
-              : "text-right md:text-lg  font-GE-SS-Text-Light"
+              ? "text-left text-xl md:text-lg   font-Gotham-Book"
+              : "text-right text-xl  md:text-lg  font-GE-SS-Text-Light"
           }`}
         />
       </div>

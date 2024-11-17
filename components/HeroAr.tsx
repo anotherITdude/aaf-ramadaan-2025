@@ -17,7 +17,7 @@ const HeroAr = () => {
   return (
     <Section>
       <Navbar />
-      <div className="min-h-[400px] md:min-h-[600px]  relative ">
+      <div className="min-h-[450px] md:min-h-[600px]  relative ">
         <Image className="absolute bottom-0" src={bg} alt="bg" />
         <Image
           className="absolute w-full -bottom-2 md:-bottom-[4.1%] right-0"
