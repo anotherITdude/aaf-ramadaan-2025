@@ -4,12 +4,28 @@ import logo from "../public/aafLogo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+
 const Navbar = () => {
   const locale = usePathname();
   const locales = ["en", "ar"];
+
+  // Animation variants for navbar items
+  const navbarVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+  };
+
   return (
-    <div className="flex justify-between pl-4 pr-4 md:pl-10 md:pr-10 pt-6 items-center ">
-      <div className={`md:pr-4 text-2xl`}>
+    <div className="flex justify-between pl-4 pr-4 md:pl-10 md:pr-10 pt-6 items-center">
+      {/* Animated Language Switcher */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% is visible
+        variants={navbarVariants}
+        className="md:pr-4 text-2xl"
+      >
         {locales.map((lang, index) => (
           <React.Fragment key={lang}>
             <Link
@@ -27,10 +43,17 @@ const Navbar = () => {
             )}
           </React.Fragment>
         ))}
-      </div>
-      <div>
+      </motion.div>
+
+      {/* Animated Logo */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={navbarVariants}
+      >
         <Image className="w-[110px] md:w-[140px] md:-mb-24" src={logo} alt="logo" />
-      </div>
+      </motion.div>
     </div>
   );
 };
