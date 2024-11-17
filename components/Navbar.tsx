@@ -8,7 +8,7 @@ const Navbar = () => {
   const locale = usePathname();
   const locales = ["en", "ar"];
   return (
-    <div className="flex justify-between pl-10 pr-10 pt-6 items-center ">
+    <div className="flex justify-between pl-4 pr-4 md:pl-10 md:pr-10 pt-6 items-center ">
       <div className={`md:pr-4 text-2xl`}>
         {locales.map((lang, index) => (
           <React.Fragment key={lang}>
@@ -29,7 +29,7 @@ const Navbar = () => {
         ))}
       </div>
       <div>
-        <Image className="w-[140px] md:-mb-24" src={logo} alt="logo" />
+        <Image className="w-[110px] md:w-[140px] md:-mb-24" src={logo} alt="logo" />
       </div>
     </div>
   );
