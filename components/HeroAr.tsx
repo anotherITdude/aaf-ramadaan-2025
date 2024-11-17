@@ -26,7 +26,7 @@ const HeroAr = () => {
         />
         <div
           
-          className="w-full md:w-[62%] md:text-7xl p-8 pt-20 md:p-20 font-Zain-Black text-right"
+          className="w-full md:w-[62%] md:text-7xl p-8 pt-20 md:p-20 font-Zain-Black text-right md:text-left"
         >
           <div className="flex justify-start items-center">
             <div className="mr-3 text-6xl md:text-7xl ">{t.herotitlear1}</div>
