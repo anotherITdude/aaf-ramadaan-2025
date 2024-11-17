@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../public/aafLogo.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +9,12 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const locale = usePathname();
   const locales = ["en", "ar"];
+  const [animationComplete, setAnimationComplete] = useState(false);
+
+  // Trigger the animation once when the component is mounted
+  useEffect(() => {
+    setAnimationComplete(true);
+  }, []);
 
   // Animation variants for navbar items
   const navbarVariants = {
@@ -21,8 +27,7 @@ const Navbar = () => {
       {/* Animated Language Switcher */}
       <motion.div
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }} // Trigger animation when 20% is visible
+        animate={animationComplete ? "visible" : "hidden"}
         variants={navbarVariants}
         className="md:pr-4 text-2xl"
       >
@@ -48,8 +53,7 @@ const Navbar = () => {
       {/* Animated Logo */}
       <motion.div
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        animate={animationComplete ? "visible" : "hidden"}
         variants={navbarVariants}
       >
         <Image className="w-[110px] md:w-[140px] md:-mb-24" src={logo} alt="logo" />
