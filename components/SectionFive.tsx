@@ -14,10 +14,12 @@ const SectionFive = () => {
 
   return (
     <Section className="pb-6">
-      <div className="flex md:min-h-[600px] section5 min-h-[500px] relative">
+      <div className="flex md:min-h-[600px] section5SM md:section5 
+      pt-8 md:pt-0 min-h-[550px] relative">
         <div>
           <Image
-            className="absolute max-w-[330px] -bottom-6"
+            className="absolute max-w-[240px] md:max-w-[330px] 
+            -bottom-14 left-0 md:-bottom-0 "
             src={section_five}
             alt="bg"
           />
@@ -28,10 +30,10 @@ const SectionFive = () => {
             dangerouslySetInnerHTML={{
               __html: t.section5Paragraph,
             }}
-            className={`w-[50%] p-20  ${
+            className={` w-full md:w-[50%] p-6 md:p-20  ${
               locale === "/"
-                ? "font-Gotham-Book gg text-right"
-                : "text-right md:text-lg font-GE-SS-Text-Light"
+                ? "font-Gotham-Book text-xl md:text-lg gg text-right"
+                : "text-right text-2xl md:text-lg font-GE-SS-Text-Light"
             }`}
           />
         </div>

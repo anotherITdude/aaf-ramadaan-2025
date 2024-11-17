@@ -70,6 +70,13 @@ body {
     background-position: bottom right 50px; /* Shift 20px to the left */
   }
 
+  .section5SM {
+    background-image: url("../public/history_bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom right 0px; /* Shift 20px to the left */
+  }
+
   .section4 {
     background-image: url("../public/section4_bg.png");
     background-size: 45%;

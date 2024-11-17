@@ -30,7 +30,7 @@ const Abdulla = () => {
           ${
             locale === "/"
               ? "absolute w-[50px] md:w-[60px] bottom-[29%] right-8 md:bottom-40 md:right-28"
-              : "absolute w-[50px] md:w-[60px] bottom-[24%] right-8 md:bottom-40 md:right-28"
+              : "absolute w-[50px] md:w-[60px] bottom-[27%] right-8 md:bottom-40 md:right-28"
           }
           `}
         src={abdulla_parachute}
@@ -108,8 +108,8 @@ const Abdulla = () => {
               dangerouslySetInnerHTML={{ __html: t.abdullaComment }}
               className={`flex  mb-6 md:hidden ${
                 locale === "/"
-                  ? " justify-center text-left items-center text-lg font-Gotham-Book mt-8"
-                  : " text-xl font-GE-SS-Text-Light text-right justify-center mt-8"
+                  ? " justify-center text-left items-center text-xl font-Gotham-Book mt-8"
+                  : " text-2xl md:text-lg font-GE-SS-Text-Light text-right justify-center mt-10"
               }`}
             />
 

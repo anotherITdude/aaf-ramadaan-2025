@@ -12,7 +12,9 @@ const SectionFour = () => {
   const t: Translations = locale === "/" ? en : ar;
   return (
     <Section className="pb-6">
-      <div className=" flex flex-col md:min-h-[600px] section4SM md:section4 min-h-[500px] relative  ">
+      <div className=" flex flex-col 
+      pt-0 md:pt-0
+      md:min-h-[600px] section4SM md:section4 min-h-[500px] relative  ">
         <div>
           <Image
             className="absolute max-w-[220px] z-10 md:max-w-[300px] 
