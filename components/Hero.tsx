@@ -24,7 +24,7 @@ const Hero = () => {
           src={bg_product}
           alt="bg"
         />
-        <div className="w-full md:w-[52%] p-10 pt-12 md:pt-0 md:p-20 font-Albus">
+        <div className="w-full md:w-[52%] p-10 pt-12  md:p-20 font-Albus">
           <div className="flex justify-start items-center">
             <div className="mr-3 text-6xl">{t.herotitle1}</div>
             <div className="text-8xl">
