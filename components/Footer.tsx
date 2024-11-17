@@ -5,9 +5,9 @@ import Section from "./Section";
 const Footer = () => {
   return (
     <Section>
-      <div className="md:min-h-[100px] relative ">
+      <div className="relative ">
         <Image
-          className="absolute w-full -bottom-[4.1%] right-0"
+          className="absolute w-full bg-white  right-0"
           src={bg_footer}
           alt="bg"
         />

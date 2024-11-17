@@ -33,7 +33,7 @@ const SectionFive = () => {
             className={` w-full md:w-[50%] p-6 md:p-20  ${
               locale === "/"
                 ? "font-Gotham-Book text-xl md:text-lg gg text-right"
-                : "text-right text-2xl md:text-lg font-GE-SS-Text-Light"
+                : "text-right text-2xl md:text-xl font-GE-SS-Text-Light"
             }`}
           />
         </div>

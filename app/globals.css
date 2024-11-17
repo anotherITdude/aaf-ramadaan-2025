@@ -98,6 +98,13 @@ body {
     background-position: bottom 45px right -50px;
   }
 
+  .section6SM {
+    background-image: url("../public/landmarks_bg.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom 45px right 0px;
+  }
+
   .landmarks {
     background-image: url("../public/landmarks_bg.png");
     background-size: 80%;
