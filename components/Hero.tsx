@@ -2,7 +2,7 @@
 import React from "react";
 import bg from "@/public/test.png";
 import Image from "next/image";
-import bg_product from "@/public/Group34.png";
+import bg_product from "@/public/hero_product.png";
 import Section from "./Section";
 import Navbar from "./Navbar";
 import { en } from "@/locales/en";
