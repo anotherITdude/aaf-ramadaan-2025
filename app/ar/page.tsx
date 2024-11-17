@@ -17,6 +17,7 @@ export default function Home() {
       <SectionFour />
       <SectionFive />
       <SectionSix />
+      {/* <Landmarks /> */}
       <Signature />
       <Footer />
     </Container>

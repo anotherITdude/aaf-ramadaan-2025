@@ -60,6 +60,10 @@ export default {
 				'Albus': ["Albus"],
 				'Gotham-Book': ["Gotham-Book"],
 				'Gotham-Bold': ["Gotham-Bold"],
+				'GE-SS-Text-Bold': ["GE-SS-Text-Bold"],
+				'GE-SS-Text-Light': ["GE-SS-Text-Light"],
+				'GE-SS-Text-Medium': ["GE-SS-Text-Medium"],
+				'Zain-Black': ["Zain-Black"],
   			
   		},
   	}

@@ -17,6 +17,28 @@
   src: url("../fonts/Gotham-Bold.ttf");
 }
 
+@font-face {
+  font-family: "GE-SS-Text-Bold";
+  src: url("../fonts/GE SS Text Bold.otf");
+}
+
+@font-face {
+  font-family: "GE-SS-Text-Light";
+  src: url("../fonts/GE SS Text Light.otf");
+}
+
+@font-face {
+  font-family: "GE-SS-Text-Medium";
+  src: url("../fonts/GE SS Text Medium.otf");
+}
+
+@font-face {
+  font-family: "Zain-Black";
+  src: url("../fonts/Zain-Black.ttf");
+}
+
+
+
 
 body {
   font-family: Arial, Helvetica, sans-serif;

@@ -3,9 +3,11 @@ import bg from "@/public/test.png";
 import Image from "next/image";
 import bg_product from "@/public/Group34.png";
 import Section from "./Section";
+import Navbar from "./Navbar";
 const Hero = () => {
   return (
     <Section>
+      <Navbar />
       <div className="md:min-h-[600px]  relative ">
         <Image className="absolute bottom-0" src={bg} alt="bg" />
         <Image
