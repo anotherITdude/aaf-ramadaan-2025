@@ -10,7 +10,7 @@ import { ar } from "@/locales/ar";
 import { Translations } from "@/types";
 import { usePathname } from "next/navigation";
 
-const Hero = () => {
+const HeroAr = () => {
   const locale = usePathname();
   const t: Translations = locale === "/" ? en : ar;
 
@@ -24,22 +24,15 @@ const Hero = () => {
           src={bg_product}
           alt="bg"
         />
-        <div className="w-[52%] md:text-6xl p-20 font-Albus">
+        <div className="w-[62%] md:text-7xl p-20 font-Zain-Black">
           <div className="flex justify-start items-center">
-            <div className="mr-3">{t.herotitle1}</div>
-            <div className="text-8xl">
-              {t.herotitle2} 
-            </div>
-            <div
-              dangerouslySetInnerHTML={{ __html: t.herotitle3 }}
-              className="text-6xl"
-            />
+            <div className="mr-3">{t.herotitlear1}</div>
           </div>
-          <p>{t.herotitle4}</p>
+          <p>{t.herotitlear2}</p>
         </div>
       </div>
     </Section>
   );
 };
 
-export default Hero;
+export default HeroAr;

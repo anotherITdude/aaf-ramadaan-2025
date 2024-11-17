@@ -1,9 +1,16 @@
+"use client";
 import React from "react";
 import Section from "./Section";
 import bg from "@/public/section_2.png";
 import ballon from "@/public/section2_balloon.png";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { Translations } from "@/types";
+import { en } from "@/locales/en";
+import { ar } from "@/locales/ar";
 const NationalDay = () => {
+  const locale = usePathname();
+  const t: Translations = locale === "/" ? en : ar;
   return (
     <Section className="overflow-hidden">
       <div className=" flex md:min-h-[600px] relative justify-start  items-start">
@@ -17,14 +24,14 @@ const NationalDay = () => {
           src={ballon}
           alt="bg"
         />
-        <p className="w-[52%] p-20 font-Gotham-Book">
-          Ever since H.H. late Sheikh Zayed Bin Sultan Al Nahyan founded Al Ain
-          Farms to bring fresh food to the nation over 40 years ago, Al Ain
-          Farms is continuing its legacy and responsibility of serving the UAE
-          people with freshest and purest dairy and poultry products. Al Ain
-          Farms is proudly UAE made and since its inception has been deeply
-          rooted within the Emirati culture.
-        </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: t.section2Paragraph }}
+          className={`w-[52%] p-20 ${
+            locale === "/"
+              ? "text-left  font-Gotham-Book"
+              : "text-right md:text-lg  font-GE-SS-Text-Light"
+          }`}
+        />
       </div>
     </Section>
   );
