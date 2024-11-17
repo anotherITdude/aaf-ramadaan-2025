@@ -70,10 +70,10 @@ const Abdulla = () => {
         //@ts-expect-error variants structure issue
         variants={parachuteVariants}
         animate="floating"
-        className="absolute top-[30%] md:top-[50%] right-8 md:right-28"
+        className="absolute top-[18%] md:top-[50%] right-8 md:right-28"
       >
         <Image
-          className="w-[50px] md:w-[60px]"
+          className="w-[60px] md:w-[60px]"
           src={abdulla_parachute}
           alt="abdulla parachute"
         />
