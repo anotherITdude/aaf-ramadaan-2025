@@ -31,8 +31,8 @@ const HeroAr = () => {
           src={bg_product}
           alt="bg"
         />
-        <div className="w-full md:w-[62%] md:text-7xl p-8 pt-20 md:p-20 font-Zain-Black text-right md:text-left">
-          <div className="flex justify-start items-center">
+        <div className="w-full md:w-[52%]  md:text-7xl p-8 pt-20 md:p-20 font-Zain-Black text-right md:text-left">
+          <div className="flex justify-end md:justify-start items-center">
             <motion.div
               variants={textVariants}
               initial="hidden"
@@ -46,7 +46,7 @@ const HeroAr = () => {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="text-7xl"
+            className="text-7xl pl-0 pr-3 md:pr-0 md:pl-4"
           >
             {t.herotitlear2}
           </motion.p>

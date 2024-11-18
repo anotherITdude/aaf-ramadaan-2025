@@ -92,7 +92,7 @@ const Abdulla = () => {
             animate="visible"
             dangerouslySetInnerHTML={{ __html: t.abdulla1 }}
             className={`flex ${
-              locale === "/" ? "justify-start" : "justify-start"
+              locale === "/" ? "justify-start" : "justify-center pr-[30%]"
             }`}
           />
           <motion.div
@@ -101,7 +101,7 @@ const Abdulla = () => {
             animate="visible"
             dangerouslySetInnerHTML={{ __html: t.abdulla2 }}
             className={`flex ${
-              locale === "/" ? "justify-center" : "justify-center"
+              locale === "/" ? "justify-center" : "justify-center pl-[5%]"
             }`}
           />
           <motion.div
@@ -109,7 +109,7 @@ const Abdulla = () => {
             initial="hidden"
             animate="visible"
             dangerouslySetInnerHTML={{ __html: t.abdulla3 }}
-            className={`flex ${locale === "/" ? "justify-end" : "justify-end"}`}
+            className={`flex ${locale === "/" ? "justify-end" : "justify-start pl-[25%]"}`}
           />
         </div>
 
@@ -147,7 +147,7 @@ const Abdulla = () => {
               animate="visible"
               dangerouslySetInnerHTML={{ __html: t.abdulla2 }}
               className={`flex ${
-                locale === "/" ? "justify-center" : "justify-center"
+                locale === "/" ? "justify-start pl-[10%]" : "justify-center"
               }`}
             />
             <motion.div
@@ -156,7 +156,7 @@ const Abdulla = () => {
               animate="visible"
               dangerouslySetInnerHTML={{ __html: t.abdulla3 }}
               className={`flex ${
-                locale === "/" ? "justify-end" : "justify-end"
+                locale === "/" ? "justify-start pl-[15%]" : "justify-start pl-[20%]"
               }`}
             />
           </div>

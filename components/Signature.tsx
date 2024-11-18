@@ -71,7 +71,7 @@ const Signature = () => {
         >
           <Image className="w-[100%] mr-6" src={signature_bg} alt="bg" />
           <div className="flex justify-center gap-x-2 mt-4 p-6">
-            <p className={locale === "/" ? "font-Albus" : "font-GE-SS-Text-Bold text-lg md:text-lg"}>
+            <p className={locale === "/" ? "font-Albus" : "font-GE-SS-Text-Bold text-lg md:text-lg text-right"}>
               {t.limitedEdition}
             </p>
             <Image className="md:w-[90px]" src={locale === "/" ? signature_sign : signature_sign_ar} alt="signature" />
