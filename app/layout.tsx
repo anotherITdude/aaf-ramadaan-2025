@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AAF UAE National Day 2024",
-  description: "AAF 53rd UAE National Day | Celebrating Abdulla Lutfi's unique local take",
+  title: "🌙 Ramadan 2025 – Something Special is Coming! 🌙",
+  description: "We’re preparing something exciting for you this Ramadan! Stay tuned for a special experience with Al Ain Farms.",
 };
 
 export default function RootLayout({
