@@ -51,8 +51,15 @@ body {
   }
 
   .hero {
-   
     background-image: url("../public/bg_hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+  }
+
+  .sectiontwo {
+    background-image: url("../public/section2_bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
