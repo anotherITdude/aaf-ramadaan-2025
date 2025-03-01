@@ -110,13 +110,13 @@ const HeroAr = () => {
           className="flex flex-col md:flex-row items-center justify-center"
         >
           <Image
-            className="max-w-[60%] md:max-w-[410px] mt-[42%] sm:mt-[65%] md:mt-[15%]"
+            className="max-w-[58%] md:max-w-[410px] mt-[42%] sm:mt-[65%] md:mt-[15%]"
             src={moonSpoon}
             alt="Moon with Spoon"
           />
           <div
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-4 sm:mt-10 md:mt-0 md:-ml-48 text-secondary 
+            className={` mt-4 sm:mt-8 md:mt-0 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
                     ?  "font-Zain-Black text-5xl md:text-6xl"
