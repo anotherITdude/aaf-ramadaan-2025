@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between pl-4 pr-4 md:pl-4 md:pr-0 pt-3 pb-3 items-center z-50 bg-white/90 rounded-br-2xl ">
+    <div className="flex justify-between pl-4 pr-4 md:pl-4 md:pr-0 pt-3 pb-3 items-center z-50 bg-white/90 rounded-br-3xl">
       {/* Animated Language Switcher */}
       <motion.div
         initial="hidden"
@@ -38,6 +38,7 @@ const Navbar = () => {
                   ? "text-gray-500 cursor-not-allowed underline animate-pulse underline-offset-4 font-Albus"
                   : "text-black cursor-pointer font-Albus"
               }`}
+              style={{ padding: "10px 15px" }}
             >
               {lang === "ar" ? "Ar" : "En"}
             </Link>
@@ -49,7 +50,6 @@ const Navbar = () => {
       </motion.div>
 
       {/* Animated Logo */}
-      
     </div>
   );
 };
