@@ -116,7 +116,7 @@ const HeroAr = () => {
           />
           <div
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-4 sm:mt-8 md:mt-0 md:-ml-48 text-secondary 
+            className={` mt-4 sm:mt-8 md:mt-0 z-50 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
                     ?  "font-Zain-Black text-5xl md:text-6xl"
@@ -224,7 +224,7 @@ const HeroAr = () => {
             <Image src={ramadaan_logo} alt="Product" />
           </motion.div>
           <motion.div
-            className="z-50 max-w-[350px] md:max-w-[440px]"
+            className="z-40 max-w-[350px] md:max-w-[440px]"
             initial={{ opacity: 0, x: "10%" }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
