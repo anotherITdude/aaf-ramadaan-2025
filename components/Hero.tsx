@@ -13,6 +13,7 @@ import moonSpoon from "@/public/moon_with_spoon.png";
 import star5 from "@/public/star5.png";
 import bg_product from "@/public/hero_products.png";
 import bg_gold from "@/public/bg_gold.png";
+import bg_gold_mobile from "@/public/bg_gold_mobile.png";
 import ramadaan_logo from "@/public/ramadaan_logo.png";
 import top_lamp from "@/public/top_left.png";
 import logo from "@/public/logo.png";
@@ -91,34 +92,35 @@ const Hero = () => {
     <Section>
       <Navbar />
       <div
-        className="flex min-h-[700px] relative flex-col items-center justify-start
+        className="flex min-h-[90vh] md:min-h-[700px] relative flex-col items-center justify-start
       hero overflow-hidden
       "
       >
-        <div className="absolute -right-14 -top-20 flex flex-row items-center justify-center">
-          <Image className="max-w-[300px]" src={logo} alt="Logo" />
+        <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">
+          <Image className=" max-w-[250px] md:max-w-[300px]" src={logo} alt="Logo" />
         </div>
-        <div className="absolute left-16 top-0 flex flex-row items-center justify-center">
-          <Image className="max-w-[110px]" src={top_lamp} alt="Golden Day" />
+        <div className="absolute  flex flex-row items-center justify-center
+        left-4 md:left-16 top-0">
+          <Image className="max-w-[110px]" src={top_lamp} alt="top lamps" />
         </div>
         <motion.div
           initial={{ opacity: 0, y: "-10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex flex-row items-center justify-center"
+          className="flex flex-col md:flex-row items-center justify-center"
         >
           <Image
-            className="max-w-[410px] mt-[15%]"
+            className="max-w-[70%] md:max-w-[410px] mt-[50%] md:mt-[15%]"
             src={moonSpoon}
             alt="Moon with Spoon"
           />
           <div
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={`-ml-48 text-secondary 
+            className={` mt-5 md:mt-0 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
                     ? "arabic-font-class"
-                    : "font-Gotham-Bold text-3xl"
+                    : "font-Gotham-Bold text-3xl md:text-3xl"
                 }
                 `}
           ></div>
@@ -126,13 +128,14 @@ const Hero = () => {
 
         {/* Background Image */}
         <motion.div
-          className="absolute -bottom-2 z-10"
+          className="absolute bottom-0 md:-bottom-2 z-10"
           style={{ y: bgGoldY }}
           initial={{ opacity: 0, y: "10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <Image src={bg_gold} alt="Golden Day" />
+          <Image className="md:block hidden" src={bg_gold} alt="Golden Day" />
+          <Image className="md:hidden" src={bg_gold_mobile} alt="Golden Day" />
         </motion.div>
 
         <div className="">
@@ -141,7 +144,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar1)}
             initial="initial"
             animate="animate"
-            className="absolute left-[25%] top-[45%] max-w-[50px] z-20"
+            className="absolute left-[10%] md:left-[25%] top-[45%] max-w-[50px] z-20"
             style={{ y: star1Y }}
           >
             <Image src={star5} alt="Star 1" />
@@ -150,7 +153,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar2)}
             initial="initial"
             animate="animate"
-            className="absolute left-[30%] top-[5%] max-w-[30px] z-10"
+            className="absolute left-[35%] md:left-[30%] top-[5%] max-w-[30px] z-10"
             style={{ y: star2Y }}
           >
             <Image src={star5} alt="Star 2" />
@@ -159,7 +162,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar3)}
             initial="initial"
             animate="animate"
-            className="absolute left-[42%] bottom-[29%] max-w-[30px] z-20"
+            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[29%] max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
@@ -168,7 +171,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar4)}
             initial="initial"
             animate="animate"
-            className="absolute right-[32%] bottom-[33%] max-w-[30px] z-20"
+            className="absolute right-[40%] md:right-[32%] bottom-[39%] md:bottom-[33%] max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
@@ -177,7 +180,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar5)}
             initial="initial"
             animate="animate"
-            className="absolute top-[42%] right-[48%] max-w-[20px] z-10"
+            className="absolute top-[42%] md:top-[42%] right-[40%] md:right-[48%] max-w-[20px] z-10"
             style={{ y: star4Y }}
           >
             <Image src={star5} alt="Star 4" />
@@ -186,7 +189,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar6)}
             initial="initial"
             animate="animate"
-            className="absolute top-[18%] right-[40%] max-w-[20px] z-20"
+            className="absolute top-[25%] md:top-[18%] right-[40%] max-w-[20px] z-20"
             style={{ y: star5Y }}
           >
             <Image src={star5} alt="Star 5" />
@@ -195,7 +198,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar7)}
             initial="initial"
             animate="animate"
-            className="absolute right-[23%] top-[40%] max-w-[15px] z-10"
+            className="absolute right-[15%] md:right-[23%] top-[35%] md:top-[40%] max-w-[15px] z-10"
             style={{ y: star6Y }}
           >
             <Image src={star5} alt="Star 6" />
@@ -211,9 +214,9 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-0 flex flex-row items-center justify-between w-full pl-10 pr-10">
+        <div className="absolute bottom-2 md:bottom-0 flex flex-row items-center justify-between w-full pl-2 md:pl-10 pr-2 md:pr-10">
           <motion.div
-            className="z-50 max-w-[300px] mt-[18%]"
+            className="z-50 max-w-[150px] md:max-w-[300px] mt-[20%] md:mt-[18%]"
             initial={{ opacity: 0, x: "-10%" }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
@@ -221,7 +224,7 @@ const Hero = () => {
             <Image src={ramadaan_logo} alt="Product" />
           </motion.div>
           <motion.div
-            className="z-50 max-w-[440px]"
+            className="z-50 max-w-[350px] md:max-w-[440px]"
             initial={{ opacity: 0, x: "10%" }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}

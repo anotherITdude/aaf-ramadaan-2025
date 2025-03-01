@@ -1,7 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import logo from "../public/logo.png";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -23,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between pl-4 pr-4 md:pl-10 md:pr-10 pt-6 items-center">
+    <div className="flex justify-between pl-4 pr-4 md:pl-3 md:pr-3 pt-3 pb-3 items-center">
       {/* Animated Language Switcher */}
       <motion.div
         initial="hidden"
@@ -51,13 +49,7 @@ const Navbar = () => {
       </motion.div>
 
       {/* Animated Logo */}
-      <motion.div
-        initial="hidden"
-        animate={animationComplete ? "visible" : "hidden"}
-        variants={navbarVariants}
-      >
-        <Image className="w-[110px] md:w-[140px] md:-mb-24" src={logo} alt="logo" />
-      </motion.div>
+      
     </div>
   );
 };
