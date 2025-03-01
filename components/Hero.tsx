@@ -77,7 +77,7 @@ const Hero = () => {
     return {
       initial: { opacity: 1 },
       animate: {
-        opacity: isBlinking ? [1, 0, 0, .5,  1] : 1,
+        opacity: isBlinking ? [1, 0, 0, 0.5, 1] : 1,
         transition: {
           duration: randomDuration, // Use the random duration
           repeat: isBlinking ? Infinity : 0,
@@ -90,18 +90,31 @@ const Hero = () => {
 
   return (
     <Section>
-       <div className="absolute z-50"> <Navbar  /></div>
+      <div className="absolute z-50">
+        {" "}
+        <Navbar />
+      </div>
       <div
         className="flex  min-h-[95vh] md:min-h-[700px] relative flex-col items-center justify-start
       hero overflow-hidden md:rounded-t-3xl
       "
       >
         <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">
-          <Image className=" max-w-[200px] md:max-w-[300px]" src={logo} alt="Logo" />
+          <Image
+            className=" max-w-[200px] md:max-w-[300px]"
+            src={logo}
+            alt="Logo"
+          />
         </div>
-        <div className="absolute  flex flex-row items-center justify-center
-        left-4 md:left-16 -top-2 md:top-0">
-          <Image className="max-w-[100px] md:max-w-[110px]" src={top_lamp} alt="top lamps" />
+        <div
+          className="absolute  flex flex-row items-center justify-center
+        left-4 md:left-16 -top-2 md:top-0"
+        >
+          <Image
+            className="max-w-[100px] md:max-w-[110px]"
+            src={top_lamp}
+            alt="top lamps"
+          />
         </div>
         <motion.div
           initial={{ opacity: 0, y: "-10%" }}
@@ -114,16 +127,17 @@ const Hero = () => {
             src={moonSpoon}
             alt="Moon with Spoon"
           />
-          <div
+          <motion.div
+            style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-4 sm:mt-8 md:mt-0 z-50 md:-ml-48 text-secondary 
+            className={` mt-4 sm:mt-7 md:mt-0 z-50 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
-                    ?  "font-Zain-Black text-5xl md:text-6xl"
+                    ? "font-Zain-Black text-5xl md:text-6xl"
                     : "font-Gotham-Bold text-2xl md:text-3xl"
                 }
                 `}
-          ></div>
+          ></motion.div>
         </motion.div>
 
         {/* Background Image */}

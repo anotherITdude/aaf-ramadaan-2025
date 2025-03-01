@@ -114,16 +114,17 @@ const HeroAr = () => {
             src={moonSpoon}
             alt="Moon with Spoon"
           />
-          <div
+          <motion.div
+            style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-4 sm:mt-8 md:mt-0 z-50 md:-ml-48 text-secondary 
+            className={` mt-4 sm:mt-7 md:mt-0 z-50 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
                     ?  "font-Zain-Black text-5xl md:text-6xl"
                     : "font-Gotham-Bold text-2xl md:text-3xl"
                 }
                 `}
-          ></div>
+          ></motion.div>
         </motion.div>
 
         {/* Background Image */}
