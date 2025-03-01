@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
@@ -30,6 +30,63 @@ const Hero = () => {
   const star6Y = useTransform(scrollY, [0, 500], [0, -10]);
   const star7Y = useTransform(scrollY, [0, 500], [0, -60]);
 
+  const [isBlinkingStar1, setIsBlinkingStar1] = useState(false);
+  const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);
+  const [isBlinkingStar3, setIsBlinkingStar3] = useState(false);
+  const [isBlinkingStar4, setIsBlinkingStar4] = useState(false);
+  const [isBlinkingStar5, setIsBlinkingStar5] = useState(false);
+  const [isBlinkingStar6, setIsBlinkingStar6] = useState(false);
+  const [isBlinkingStar7, setIsBlinkingStar7] = useState(false);
+  const [isBlinkingStar8, setIsBlinkingStar8] = useState(false);
+
+  useEffect(() => {
+    const blinkAnimation = (
+      setBlinking: React.Dispatch<React.SetStateAction<boolean>>,
+    ) => {
+      setBlinking(true);
+      setTimeout(() => {
+        setBlinking(false);
+      }, 500); // Duration of the blink
+    };
+
+    const randomInterval = () =>
+      Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
+
+    const intervals = [
+      setInterval(() => blinkAnimation(setIsBlinkingStar1), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar2), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar3), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar4), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar5), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar6), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar7), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar8), randomInterval()),
+    ];
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
+
+  // Blinking animation for each star
+  const createBlinkingAnimation = (isBlinking: boolean) => {
+    // Array of possible durations
+    const durations = [0.1, 0.02, 0.003, 0.005, 0.007]; // You can adjust these values as needed
+    const randomDuration =
+      durations[Math.floor(Math.random() * durations.length)]; // Select a random duration
+
+    return {
+      initial: { opacity: 1 },
+      animate: {
+        opacity: isBlinking ? [1, 0, 0, .5,  1] : 1,
+        transition: {
+          duration: randomDuration, // Use the random duration
+          repeat: isBlinking ? Infinity : 0,
+          repeatType: "reverse" as const,
+          ease: "easeInOut",
+        },
+      },
+    };
+  };
+
   return (
     <Section>
       <Navbar />
@@ -48,7 +105,8 @@ const Hero = () => {
           initial={{ opacity: 0, y: "-10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex flex-row items-center justify-center">
+          className="flex flex-row items-center justify-center"
+        >
           <Image
             className="max-w-[410px] mt-[15%]"
             src={moonSpoon}
@@ -80,48 +138,72 @@ const Hero = () => {
         <div className="">
           {/* Stars with parallax effect */}
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar1)}
+            initial="initial"
+            animate="animate"
             className="absolute left-[25%] top-[45%] max-w-[50px] z-20"
             style={{ y: star1Y }}
           >
             <Image src={star5} alt="Star 1" />
           </motion.div>
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar2)}
+            initial="initial"
+            animate="animate"
             className="absolute left-[30%] top-[5%] max-w-[30px] z-10"
             style={{ y: star2Y }}
           >
             <Image src={star5} alt="Star 2" />
           </motion.div>
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar3)}
+            initial="initial"
+            animate="animate"
             className="absolute left-[42%] bottom-[29%] max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
           </motion.div>
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar4)}
+            initial="initial"
+            animate="animate"
             className="absolute right-[32%] bottom-[33%] max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
           </motion.div>
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar5)}
+            initial="initial"
+            animate="animate"
             className="absolute top-[42%] right-[48%] max-w-[20px] z-10"
             style={{ y: star4Y }}
           >
             <Image src={star5} alt="Star 4" />
           </motion.div>
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar6)}
+            initial="initial"
+            animate="animate"
             className="absolute top-[18%] right-[40%] max-w-[20px] z-20"
             style={{ y: star5Y }}
           >
             <Image src={star5} alt="Star 5" />
           </motion.div>
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar7)}
+            initial="initial"
+            animate="animate"
             className="absolute right-[23%] top-[40%] max-w-[15px] z-10"
             style={{ y: star6Y }}
           >
             <Image src={star5} alt="Star 6" />
           </motion.div>
           <motion.div
+            variants={createBlinkingAnimation(isBlinkingStar8)}
+            initial="initial"
+            animate="animate"
             className="absolute right-[8%] top-[50%] max-w-[10px] z-20"
             style={{ y: star7Y }}
           >
