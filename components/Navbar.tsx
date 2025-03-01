@@ -38,7 +38,6 @@ const Navbar = () => {
                   ? "text-gray-500 cursor-not-allowed underline animate-pulse underline-offset-4 font-Albus"
                   : "text-black cursor-pointer font-Albus"
               }`}
-              style={{ padding: "10px 15px" }}
             >
               {lang === "ar" ? "Ar" : "En"}
             </Link>

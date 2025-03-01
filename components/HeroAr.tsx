@@ -107,7 +107,7 @@ const HeroAr = () => {
           initial={{ opacity: 0, y: "-10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex z-50 flex-col md:flex-row items-center justify-center"
+          className="flex z-40 flex-col md:flex-row items-center justify-center"
         >
           <Image
             className="max-w-[58%] z-50 md:max-w-[410px] mt-[40%] sm:mt-[63%] md:mt-[15%]"
