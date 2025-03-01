@@ -47,7 +47,7 @@ body {
 @layer base {
   
   body {
-    @apply bg-slate-100;
+    @apply  bg-[#ffffff] overflow-x-hidden overflow-y-scroll;
   }
 
   .hero {

@@ -92,16 +92,16 @@ const Hero = () => {
     <Section>
       <Navbar />
       <div
-        className="flex min-h-[90vh] md:min-h-[700px] relative flex-col items-center justify-start
+        className="flex  min-h-[95vh] md:min-h-[700px] relative flex-col items-center justify-start
       hero overflow-hidden
       "
       >
         <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">
-          <Image className=" max-w-[250px] md:max-w-[300px]" src={logo} alt="Logo" />
+          <Image className=" max-w-[200px] md:max-w-[300px]" src={logo} alt="Logo" />
         </div>
         <div className="absolute  flex flex-row items-center justify-center
-        left-4 md:left-16 top-0">
-          <Image className="max-w-[110px]" src={top_lamp} alt="top lamps" />
+        left-4 md:left-16 -top-2 md:top-0">
+          <Image className="max-w-[100px] md:max-w-[110px]" src={top_lamp} alt="top lamps" />
         </div>
         <motion.div
           initial={{ opacity: 0, y: "-10%" }}
@@ -110,17 +110,17 @@ const Hero = () => {
           className="flex flex-col md:flex-row items-center justify-center"
         >
           <Image
-            className="max-w-[70%] md:max-w-[410px] mt-[50%] md:mt-[15%]"
+            className="max-w-[60%] md:max-w-[410px] mt-[42%] sm:mt-[65%] md:mt-[15%]"
             src={moonSpoon}
             alt="Moon with Spoon"
           />
           <div
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-5 md:mt-0 md:-ml-48 text-secondary 
+            className={` mt-4 sm:mt-10 md:mt-0 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
                     ? "arabic-font-class"
-                    : "font-Gotham-Bold text-3xl md:text-3xl"
+                    : "font-Gotham-Bold text-2xl md:text-3xl"
                 }
                 `}
           ></div>
@@ -144,7 +144,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar1)}
             initial="initial"
             animate="animate"
-            className="absolute left-[10%] md:left-[25%] top-[45%] max-w-[50px] z-20"
+            className="absolute left-[10%] md:left-[25%] top-[45%] max-w-[20px] md:max-w-[50px] z-20"
             style={{ y: star1Y }}
           >
             <Image src={star5} alt="Star 1" />
@@ -153,7 +153,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar2)}
             initial="initial"
             animate="animate"
-            className="absolute left-[35%] md:left-[30%] top-[5%] max-w-[30px] z-10"
+            className="absolute left-[35%] md:left-[30%] top-[5%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star2Y }}
           >
             <Image src={star5} alt="Star 2" />
@@ -162,7 +162,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar3)}
             initial="initial"
             animate="animate"
-            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[29%] max-w-[30px] z-20"
+            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[29%] max-w-[10px] md:max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
@@ -171,7 +171,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar4)}
             initial="initial"
             animate="animate"
-            className="absolute right-[40%] md:right-[32%] bottom-[39%] md:bottom-[33%] max-w-[30px] z-20"
+            className="absolute right-[40%] md:right-[32%] bottom-[39%] md:bottom-[33%] max-w-[10px] md:max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
@@ -180,7 +180,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar5)}
             initial="initial"
             animate="animate"
-            className="absolute top-[42%] md:top-[42%] right-[40%] md:right-[48%] max-w-[20px] z-10"
+            className="absolute top-[42%] md:top-[42%] right-[40%] md:right-[48%] max-w-[10px] md:max-w-[20px] z-10"
             style={{ y: star4Y }}
           >
             <Image src={star5} alt="Star 4" />
@@ -189,7 +189,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar6)}
             initial="initial"
             animate="animate"
-            className="absolute top-[25%] md:top-[18%] right-[40%] max-w-[20px] z-20"
+            className="absolute top-[25%] md:top-[18%] right-[40%] max-w-[10px] md:max-w-[20px] z-20"
             style={{ y: star5Y }}
           >
             <Image src={star5} alt="Star 5" />

@@ -93,7 +93,7 @@ const Hero = () => {
       <Navbar />
       <div
         className="flex min-h-[90vh] md:min-h-[700px] relative flex-col items-center justify-start
-      hero overflow-hidden
+      hero overflow-hidden md:rounded-t-[55px]
       "
       >
         <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">

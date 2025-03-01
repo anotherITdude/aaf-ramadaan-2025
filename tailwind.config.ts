@@ -9,7 +9,10 @@ export default {
   ],
   theme: {
 		extend: {
-			
+			screens: {
+				xs: '300px',
+				sm: '400px',
+      },
   		colors: {
   			primary: "#09A652",
         primaryDark: "#256948",

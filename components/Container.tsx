@@ -10,7 +10,7 @@ const Container: React.FC<ContainerProps> = ({ children }) => {
     <div
       className="max-w-full
        lg:max-w-[1100px]
-        mx-auto bg-white
+        mx-auto 
         rounded-sm"
     >
       {children}
