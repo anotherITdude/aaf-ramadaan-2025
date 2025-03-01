@@ -2,6 +2,7 @@
 import { Translations } from "@/types";
 
 export const ar: Translations = {
+  herotitle: "اليوم الوطني",
   herotitle1: "Happy",
   herotitle2: "53",
   herotitle3: "rd",
