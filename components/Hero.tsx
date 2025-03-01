@@ -120,7 +120,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: "-10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex flex-col md:flex-row items-center justify-center"
+          className="flex flex-col z-40 md:flex-row items-center justify-center"
         >
           <Image
             className="max-w-[58%] md:max-w-[410px] mt-[40%] sm:mt-[63%] md:mt-[15%]"
@@ -176,7 +176,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar3)}
             initial="initial"
             animate="animate"
-            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[29%] max-w-[10px] md:max-w-[30px] z-20"
+            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[29%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
