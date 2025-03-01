@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 // import Footer from "@/components/Footer";
-// import Hero from "@/components/Hero";
+ import Hero from "@/components/Hero";
 // import NationalDay from "@/components/NationalDay";
 // import Signature from "@/components/Signature";
 // import SectionFive from "@/components/SectionFive";
@@ -11,12 +11,11 @@ import Container from "@/components/Container";
 export default function Home() {
   return (
     <Container>
-      <div className="flex flex-col gap-y-4 items-center justify-center min-h-screen text-center text-2xl font-semibold font-Gotham-Book">
-        <div>🌙 Ramadan 2025 with AlAin Farms</div>
-        <div>Something Special is Coming! 🌙  </div>
-      </div>
-      {/* <Hero />
-      <NationalDay />
+     
+       
+      
+       <Hero />
+      {/*<NationalDay />
       <Abdulla />
       <SectionFour />
       <SectionFive />

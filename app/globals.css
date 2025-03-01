@@ -45,77 +45,19 @@ body {
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+  
   body {
-    @apply bg-slate-100 text-foreground;
+    @apply bg-slate-100;
   }
 
   .hero {
-    background-image: url("../public/test.png");
-    background-size: 1100px;
+   
+    background-image: url("../public/bg_hero.jpg");
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+   
   }
 
-  .section2 {
-    background-image: url("../public/section_2.png");
-    background-size: 1100px;
-  }
-
-  .section5 {
-    background-image: url("../public/history_bg.png");
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: bottom right 50px; /* Shift 20px to the left */
-  }
-
-  .section5SM {
-    background-image: url("../public/history_bg.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom right 0px; /* Shift 20px to the left */
-  }
-
-  .section4 {
-    background-image: url("../public/section4_bg.png");
-    background-size: 45%;
-    background-repeat: no-repeat;
-    background-position: bottom 45px left 200px; /* Shift 20px to the left */
-  }
-
-  .section4SM {
-    background-image: url("../public/section4_bg.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom 0px left 00px; /* Shift 20px to the left */
-  }
-
-  .section6 {
-    background-image: url("../public/landmarks_bg.png");
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: bottom 45px right -50px;
-  }
-
-  .section6SM {
-    background-image: url("../public/landmarks_bg.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: bottom 45px right 0px;
-  }
-
-  .landmarks {
-    background-image: url("../public/landmarks_bg.png");
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-  }
-
-  .nationalday {
-    background-image: url("../public/nationalday_bg.png");
-    background-size: 60%;
-    background-repeat: no-repeat;
-    background-position: bottom left 30%;
-  }
+  
 }

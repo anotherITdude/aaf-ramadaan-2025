@@ -2,6 +2,7 @@
 import { Translations } from "@/types";
 
 export const en: Translations = {
+  'herotitle': 'Delecious Moments, <br/> Shared Together',
   'herotitle1': 'Happy',
   'herotitle2': '53',
   'herotitle3': '<sup>rd</sup>',
