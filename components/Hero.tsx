@@ -90,13 +90,13 @@ const Hero = () => {
 
   return (
     <Section>
-      <Navbar />
+       <div className="absolute z-50"> <Navbar  /></div>
       <div
         className="flex  min-h-[95vh] md:min-h-[700px] relative flex-col items-center justify-start
-      hero overflow-hidden
+      hero overflow-hidden md:rounded-t-3xl
       "
       >
-        <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">
+        <div className="absolute -right-12 -top-[60px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">
           <Image className=" max-w-[200px] md:max-w-[300px]" src={logo} alt="Logo" />
         </div>
         <div className="absolute  flex flex-row items-center justify-center
@@ -119,7 +119,7 @@ const Hero = () => {
             className={` mt-4 sm:mt-10 md:mt-0 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
-                    ? "arabic-font-class"
+                    ? "font-Zain-Black text-5xl md:text-6xl"
                     : "font-Gotham-Bold text-2xl md:text-3xl"
                 }
                 `}

@@ -11,7 +11,7 @@ const Container: React.FC<ContainerProps> = ({ children }) => {
       className="max-w-full
        lg:max-w-[1100px]
         mx-auto 
-        rounded-sm"
+        rounded-t-3xl"
     >
       {children}
     </div>

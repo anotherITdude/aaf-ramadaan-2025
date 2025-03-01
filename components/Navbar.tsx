@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between pl-4 pr-4 md:pl-3 md:pr-3 pt-3 pb-3 items-center">
+    <div className="flex justify-between pl-4 pr-4 md:pl-4 md:pr-0 pt-3 pb-3 items-center z-50 bg-white/90 rounded-br-2xl ">
       {/* Animated Language Switcher */}
       <motion.div
         initial="hidden"
