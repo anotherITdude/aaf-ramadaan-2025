@@ -14,7 +14,10 @@ export default function Home() {
      
        
       
-       <Hero />
+      <Hero />
+      <div className="flex flex-col min-h-[1000px] items-center justify-center">
+        <h1>Something Special is Coming! 🌙</h1>
+      </div>
       {/*<NationalDay />
       <Abdulla />
       <SectionFour />
