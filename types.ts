@@ -1,5 +1,6 @@
 export type Translations = {
   herotitle: string;
+  section2title: string;
   herotitle1: string;
   herotitle2: string;
   herotitle3: string;

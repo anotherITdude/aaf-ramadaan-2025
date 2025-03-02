@@ -3,13 +3,14 @@ import { Translations } from "@/types";
 
 export const en: Translations = {
   'herotitle': 'Delecious Moments, <br/> Shared Together',
+  'section2title': "This Ramadan, <br/> let's nourish hearts and <br/> build togetherness.",
+  'section2Paragraph': 'Ramadan brings our multicultural community closer, fostering a spirit of generosity that uplifts everyone. At Al Ain Farms, we cherish the timeless values of sharing, forgiveness, and gratitude. That’s why we are honoured to play our part in Ramadan, by providing nourishment to the community that is guaranteed in quality and freshness.',
   'herotitle1': 'Happy',
   'herotitle2': '53',
   'herotitle3': '<sup>rd</sup>',
   'herotitle4': 'National Day',
   'herotitlear1': 'يوم وطني 53',
   'herotitlear2': 'ســــعـــــيــــــــــــد',
-  'section2Paragraph': 'Ever since H.H. late Sheikh Zayed Bin Sultan Al Nahyan founded Al Ain Farms to bring fresh food to the nation over 40 years ago, Al Ain Farms is continuing its legacy and responsibility of serving the UAE people with freshest and purest dairy and poultry products. Al Ain Farms is proudly UAE made and since its inception has been deeply rooted within the Emirati culture.',
   'abdulla1': 'Celebrating',
   'abdulla2': 'Abdulla Lutfi’s',
   'abdulla3': 'unique local take',
