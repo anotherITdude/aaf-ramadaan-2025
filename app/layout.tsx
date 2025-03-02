@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "🌙 Ramadan 2025 – Something Special is Coming! 🌙",
-  description: "We’re preparing something exciting for you this Ramadan! Stay tuned for a special experience with Al Ain Farms.",
+  title: "🌙 AlAin Farms - Ramadan 2025 🌙",
+  description: "Ramadan 2025 - Delicious Moments, Shared Together",
 };
 
 export default function RootLayout({
