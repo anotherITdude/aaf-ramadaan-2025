@@ -40,6 +40,19 @@ const Hero = () => {
   const [isBlinkingStar7, setIsBlinkingStar7] = useState(false);
   const [isBlinkingStar8, setIsBlinkingStar8] = useState(false);
 
+  // Refresh the page after 2 minutes
+  useEffect(() => {
+    const refreshTimeout = setTimeout(() => {
+      window.location.reload(); // Refresh the page
+    }, 120000);
+
+    // Cleanup the timeout on unmount
+    return () => {
+      clearTimeout(refreshTimeout);
+    };
+  }, []);
+
+
   useEffect(() => {
     const blinkAnimation = (
       setBlinking: React.Dispatch<React.SetStateAction<boolean>>,
@@ -123,14 +136,14 @@ const Hero = () => {
           className="flex flex-col z-40 md:flex-row items-center justify-center"
         >
           <Image
-            className="max-w-[58%] z-50 md:max-w-[410px] mt-[40%] sm:mt-[63%] md:mt-[15%]"
+            className="max-w-[58%] z-50 md:max-w-[410px] mt-[39%] sm:mt-[62%] md:mt-[15%]"
             src={moonSpoon}
             alt="Moon with Spoon"
           />
           <motion.div
             style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-4 sm:mt-7 md:mt-0 z-50 md:-ml-48 text-secondary 
+            className={` mt-3 sm:mt-6 md:mt-0 z-50 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
                     ? "font-Zain-Black text-5xl md:text-6xl"
@@ -185,7 +198,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar4)}
             initial="initial"
             animate="animate"
-            className="absolute right-[40%] md:right-[32%] bottom-[39%] md:bottom-[33%] max-w-[10px] md:max-w-[30px] z-20"
+            className="absolute right-[40%] md:right-[32%] bottom-[30%] md:bottom-[33%] max-w-[10px] md:max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />

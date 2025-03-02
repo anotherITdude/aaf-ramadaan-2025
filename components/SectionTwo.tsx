@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Section from "@/components/Section";
 import { en } from "@/locales/en";
 import { ar } from "@/locales/ar";
@@ -18,6 +18,9 @@ const SectionTwo = () => {
   const scrollYState = useMotionValue(0);
   const { scrollY } = useScroll();
 
+  const [isBlinkingStar1, setIsBlinkingStar1] = useState(false);
+  const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);  
+
   useEffect(() => {
     return scrollY.onChange((latest) => {
       scrollYState.set(latest);
@@ -29,10 +32,52 @@ const SectionTwo = () => {
   const moonStarY = useTransform(scrollYState, [0, 1000], [0, -160]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
   
+  useEffect(() => {
+    const blinkAnimation = (
+      setBlinking: React.Dispatch<React.SetStateAction<boolean>>,
+    ) => {
+      setBlinking(true);
+      setTimeout(() => {
+        setBlinking(false);
+      }, 500); // Duration of the blink
+    };
+
+    const randomInterval = () =>
+      Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
+
+    const intervals = [
+      setInterval(() => blinkAnimation(setIsBlinkingStar1), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar2), randomInterval()),
+    ];
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
+
+  // Blinking animation for each star
+  const createBlinkingAnimation = (isBlinking: boolean) => {
+    // Array of possible durations
+    const durations = [0.1, 0.02, 0.003, 0.005, 0.007]; // You can adjust these values as needed
+    const randomDuration =
+      durations[Math.floor(Math.random() * durations.length)]; // Select a random duration
+
+    return {
+      initial: { opacity: 1 },
+      animate: {
+        opacity: isBlinking ? [1, 0, 0, 0.5, 1] : 1,
+        transition: {
+          duration: randomDuration, // Use the random duration
+          repeat: isBlinking ? Infinity : 0,
+          repeatType: "reverse" as const,
+          ease: "easeInOut",
+        },
+      },
+    };
+  };
+
   return (
     <Section className="relative overflow-hidden">
       <div className="sectiontwo relative flex min-h-[550px] md:min-h-[650px] flex-col justify-center items-start p-2 md:p-12  overflow-hidden">
-        <div className="md:w-[55%] text-white flex flex-col gap-4 p-4 md:p-10 z-40">
+        <div className="md:w-[55%] text-white flex flex-col gap-4 p-4 md:p-10 z-50">
           <motion.h2
             initial={{ x: -20, opacity: 0 }} // Start off-screen to the left
             whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
@@ -70,7 +115,7 @@ const SectionTwo = () => {
       </div>
       <div className="z-20">
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
+          variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
           className="absolute left-[2%] md:left-[5%] bottom-[30%] md:bottom-[5%] max-w-[10px] md:max-w-[20px] z-20"
@@ -107,7 +152,7 @@ const SectionTwo = () => {
           <Image src={star5} alt="Star 1" />
         </motion.div>
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
+          variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
           className="absolute right-[25%] md:left-[50%] bottom-[20%] md:bottom-[0%] max-w-[10px] md:max-w-[10px] z-20"

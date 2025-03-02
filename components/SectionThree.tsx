@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Section from "@/components/Section";
 import { en } from "@/locales/en";
 import { ar } from "@/locales/ar";
@@ -19,7 +19,9 @@ const SectionThree = () => {
   const t: Translations = locale === "/" ? en : ar;
   const scrollYState = useMotionValue(0);
   const { scrollY } = useScroll();
-
+  const [isBlinkingStar1, setIsBlinkingStar1] = useState(false);
+  const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);  
+  
   useEffect(() => {
     return scrollY.onChange((latest) => {
       scrollYState.set(latest);
@@ -30,6 +32,48 @@ const SectionThree = () => {
   const moonStarY = useTransform(scrollYState, [0, 1000], [0, -160]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
   const bgGoldY = useTransform(scrollYState, [0, 500], [0, 100]);
+
+  useEffect(() => {
+    const blinkAnimation = (
+      setBlinking: React.Dispatch<React.SetStateAction<boolean>>,
+    ) => {
+      setBlinking(true);
+      setTimeout(() => {
+        setBlinking(false);
+      }, 500); // Duration of the blink
+    };
+
+    const randomInterval = () =>
+      Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
+
+    const intervals = [
+      setInterval(() => blinkAnimation(setIsBlinkingStar1), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar2), randomInterval()),
+    ];
+
+    return () => intervals.forEach(clearInterval);
+  }, []);
+
+  // Blinking animation for each star
+  const createBlinkingAnimation = (isBlinking: boolean) => {
+    // Array of possible durations
+    const durations = [0.1, 0.02, 0.003, 0.005, 0.007]; // You can adjust these values as needed
+    const randomDuration =
+      durations[Math.floor(Math.random() * durations.length)]; // Select a random duration
+
+    return {
+      initial: { opacity: 1 },
+      animate: {
+        opacity: isBlinking ? [1, 0, 0, 0.5, 1] : 1,
+        transition: {
+          duration: randomDuration, // Use the random duration
+          repeat: isBlinking ? Infinity : 0,
+          repeatType: "reverse" as const,
+          ease: "easeInOut",
+        },
+      },
+    };
+  };
 
   return (
     <Section className="relative overflow-hidden">
@@ -98,7 +142,7 @@ const SectionThree = () => {
         </motion.div>
 
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
+         //variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
           className="absolute right-[20%] md:right-[10%] top-[22%] md:top-[35%] max-w-[30px] md:max-w-[40px] z-20"
@@ -107,7 +151,7 @@ const SectionThree = () => {
           <Image src={moonStar} alt="Star 1" />
         </motion.div>
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
+          //variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
           className="absolute left-[20%] md:left-[65%] top-[18%] md:top-[35%] max-w-[10px] md:max-w-[20px] z-20"
@@ -125,7 +169,7 @@ const SectionThree = () => {
           <Image src={star5} alt="Star 1" />
         </motion.div>
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
+          variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
           className="absolute left-[20%] md:left-[53%] top-[25%] bottom-[10%] md:-bottom-[1%] max-w-[10px] md:max-w-[10px] z-20"
@@ -134,7 +178,7 @@ const SectionThree = () => {
           <Image src={star5} alt="Star 1" />
         </motion.div>
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
+          variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
           className="absolute right-[10%] md:left-[50%] bottom-[35%] md:bottom-[0%] max-w-[10px] md:max-w-[10px] z-20"
