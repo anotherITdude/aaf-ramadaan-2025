@@ -1,6 +1,5 @@
 import React from "react";
 //import PropTypes from "prop-types";
-import thumbnail from "@/public/thumbnail.png";
 
 const YoutubeEmbed = ({
   embedId,
