@@ -63,7 +63,7 @@ const SectionThree = () => {
         <div className=" w-full md:w-[60%] flex flex-col justify-center items-center z-50">
           <div className="w-[85%] md:w-[50%] mt-20  md:mt-auto p-0">
             <div className="cooking_video">
-              <YoutubeEmbed className="rounded-3xl" embedId="Pp7ru2TGt-M" />
+              <YoutubeEmbed className="rounded-3xl" embedId="dBcAZdtXOnM" />
               <p
                 dangerouslySetInnerHTML={{ __html: t.videoTitle }}
                 className={`  text-white
