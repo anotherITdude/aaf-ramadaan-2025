@@ -5,6 +5,7 @@ export const en: Translations = {
   'herotitle': 'Delecious Moments, <br/> Shared Together',
   'section2title': "This Ramadan, <br/> let's nourish hearts and <br/> build togetherness.",
   'section2Paragraph': 'Ramadan brings our multicultural community closer, fostering a spirit of generosity that uplifts everyone. At Al Ain Farms, we cherish the timeless values of sharing, forgiveness, and gratitude. That’s why we are honoured to play our part in Ramadan, by providing nourishment to the community that is guaranteed in quality and freshness.',
+  'videoTitle': 'Al Ain Farms Ramadan 2025',
   'herotitle1': 'Happy',
   'herotitle2': '53',
   'herotitle3': '<sup>rd</sup>',

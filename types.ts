@@ -1,13 +1,19 @@
 export type Translations = {
   herotitle: string;
   section2title: string;
+  section2Paragraph: string;
+  videoTitle: string;
+  
+  
+  
+  
   herotitle1: string;
   herotitle2: string;
   herotitle3: string;
   herotitle4: string;
   herotitlear1: string;
   herotitlear2: string;
-  section2Paragraph: string;
+  
   abdulla1: string;
   abdulla2: string;
   abdulla3: string;

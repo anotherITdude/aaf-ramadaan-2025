@@ -14,7 +14,7 @@ export default {
 				sm: '400px',
       },
   		colors: {
-  			primary: "#09A652",
+  			primary: "#00144d",
         primaryDark: "#256948",
         secondary: "#eecd7b",
         heading: "#256948",
