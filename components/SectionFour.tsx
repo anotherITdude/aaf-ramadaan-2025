@@ -83,7 +83,11 @@ const SectionFour = () => {
         <div className="w-full md:w-[40%] z-50">
           <Image className="md:max-w-[340px] " src={section4} alt="section4 " />
         </div>
-        <div className="w-full md:w-[60%] flex flex-col md:gap-y-5 gap-y-5">
+        <div
+          dir={locale === "/" ? "ltr" : "rtl"}
+          className={` w-full md:w-[60%] flex flex-col md:gap-y-5 gap-y-5
+          ${locale === "/" ? "" : "justify-end"}
+          `}>
           <motion.h2
              initial={{ x: -20, opacity: 0 }} // Start off-screen to the left
              whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
@@ -104,7 +108,7 @@ const SectionFour = () => {
             dangerouslySetInnerHTML={{ __html: t.section4Paragraph }}
             className={`text-white ${
               locale === "/"
-                ? "font-Gotham-Book text-lg md:text-xl"
+                ? "font-Gotham-Book text-lg md:text-xl "
                 : "font-GE-SS-Text-Light text-right text-lg md:text-xl"
             }`}
           />
@@ -113,7 +117,7 @@ const SectionFour = () => {
              whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
              transition={{ duration: 1 }}
           >
-            <Image className="max-w-[180px]" src={ramadanGold} alt="ramadanGold" />
+            <Image className="max-w-[180px] justify-end" src={ramadanGold} alt="ramadanGold" />
           </motion.div>
         </div>
       </div>
@@ -142,7 +146,10 @@ const SectionFour = () => {
           //variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
-          className="absolute right-[30%] md:right-[20%] -bottom-[5%] md:bottom-[-5%] max-w-[15px] md:max-w-[20px] z-20"
+          className={` absolute  z-20
+          ${locale === "/" ? "right-[30%] md:right-[15%] -bottom-[5%] md:bottom-[-0%] max-w-[15px] md:max-w-[20px] " :
+              'right-[82%]  bottom-[-2%]  md:right-[10%] md:bottom-[-5%] max-w-[15px] md:max-w-[20px]' }
+          `}
           style={{ y: star1Y }}
         >
           <Image src={star5} alt="Star 1" />
@@ -152,17 +159,23 @@ const SectionFour = () => {
           variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
-          className="absolute right-[10%] md:right-[60%] bottom-[0%] md:bottom-[-9%] max-w-[20px] md:max-w-[15px] z-20"
+          className={` absolute  z-20
+          ${locale === "/" ? "right-[10%] md:right-[59%] md:bottom-[-7%] md:max-w-[15px]  bottom-[0%]  max-w-[20px] " :
+              'right-[82%] top-[65%] md:right-[58%] md:bottom-[-9%] md:max-w-[15px]  max-w-[10px] ' }
+          `}
           style={{ y: star2Y }}
         >
           <Image src={star5} alt="Star 1" />
         </motion.div>
 
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar2)}
+          variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
-          className="absolute right-[8%] md:right-[50%] top-[60%] md:top-[15%] max-w-[10px] md:max-w-[10px] z-20"
+          className={` absolute  z-20
+          ${locale === "/" ? "right-[8%]  top-[60%]  max-w-[10px] md:right-[62%] md:bottom-[-9%] md:max-w-[15px] " :
+              'right-[32%]  top-[65%]  max-w-[10px] md:right-[52%] md:top-[90%] md:max-w-[15px] ' }
+          `}
           style={{ y: star3Y }}
         >
           <Image src={star5} alt="Star 1" />
