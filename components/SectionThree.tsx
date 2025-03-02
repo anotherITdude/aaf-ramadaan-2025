@@ -43,8 +43,8 @@ const SectionThree = () => {
             className={` md:mb-10 mt-10 w-full md:mt-20 text-secondary md:text-primary 
                 ${
                   locale === "/ar"
-                    ? "font-Zain-Black text-5xl md:text-6xl"
-                    : "font-Gotham-Bold text-2xl md:text-3xl pl-10"
+                    ? "font-Zain-Black text-5xl md:text-6xl text-right pr-7"
+                    : "font-Gotham-Bold text-2xl md:text-3xl pl-7"
                 }
                 `}
           ></motion.div>
@@ -61,7 +61,7 @@ const SectionThree = () => {
           </motion.div>
         </div>
         <div className=" w-full md:w-[60%] flex flex-col justify-center items-center z-50">
-          <div className="md:w-[50%] mt-20  md:mt-auto p-0">
+          <div className="w-[85%] md:w-[50%] mt-20  md:mt-auto p-0">
             <div className="cooking_video">
               <YoutubeEmbed className="rounded-3xl" embedId="Pp7ru2TGt-M" />
               <p
@@ -69,7 +69,7 @@ const SectionThree = () => {
                 className={`  text-white
                   ${
                     locale === "/ar"
-                      ? "font-GE-SS-Text-Medium text-5xl md:text-6xl"
+                      ? "font-GE-SS-Text-Light text-xl md:text-6xl text-right"
                       : "font-Gotham-Black text-sm mt-2 md:text-lg text-center"
                   }
                   `}
@@ -101,7 +101,7 @@ const SectionThree = () => {
           //variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
-          className="absolute right-[20%] md:right-[10%] top-[20%] md:top-[35%] max-w-[30px] md:max-w-[40px] z-20"
+          className="absolute right-[20%] md:right-[10%] top-[22%] md:top-[35%] max-w-[30px] md:max-w-[40px] z-20"
           style={{ y: moonStarY }}
         >
           <Image src={moonStar} alt="Star 1" />
