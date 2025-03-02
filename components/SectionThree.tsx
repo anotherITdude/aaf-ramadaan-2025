@@ -69,8 +69,8 @@ const SectionThree = () => {
                 className={`  text-white
                   ${
                     locale === "/ar"
-                      ? "font-GE-SS-Text-Light text-xl md:text-6xl text-right"
-                      : "font-Gotham-Black text-sm mt-2 md:text-lg text-center"
+                      ? "font-GE-SS-Text-Light text-xl md:text-lg mt-2 text-right md:text-center"
+                      : "font-Gotham-Black text-sm mt-2 md:text-lg text-left md:text-center"
                   }
                   `}
               />
