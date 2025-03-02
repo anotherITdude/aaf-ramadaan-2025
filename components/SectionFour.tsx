@@ -162,7 +162,7 @@ const SectionFour = () => {
           //variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
-          className="absolute right-[20%] md:right-[50%] top-[56%] md:top-[15%] max-w-[10px] md:max-w-[10px] z-20"
+          className="absolute right-[8%] md:right-[50%] top-[60%] md:top-[15%] max-w-[10px] md:max-w-[10px] z-20"
           style={{ y: star3Y }}
         >
           <Image src={star5} alt="Star 1" />

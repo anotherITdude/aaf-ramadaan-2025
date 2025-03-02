@@ -198,7 +198,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar4)}
             initial="initial"
             animate="animate"
-            className="absolute right-[40%] md:right-[32%] bottom-[30%] md:bottom-[33%] max-w-[10px] md:max-w-[30px] z-20"
+            className="absolute right-[40%] md:right-[32%] bottom-[43%] md:bottom-[33%] max-w-[10px] md:max-w-[30px] z-20"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
