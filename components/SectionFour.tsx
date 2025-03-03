@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import section4 from "@/public/section4_left.png";
 import ramadanGold from "@/public/ramadan_gold.png";
+import ramadaanAR_gold from "@/public/ramadan_gold_ar_logo.png";
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import moonStar from "@/public/moon_star.png";
 import star5 from "@/public/star5.png";
@@ -117,7 +118,11 @@ const SectionFour = () => {
              whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
              transition={{ duration: 1 }}
           >
-            <Image className="max-w-[180px] justify-end" src={ramadanGold} alt="ramadanGold" />
+            {locale === "/ar" ? (
+              <Image className="max-w-[180px] justify-end" src={ramadaanAR_gold} alt="ramadanGold" />
+            ) : (
+              <Image className="max-w-[180px] justify-end" src={ramadanGold} alt="ramadanGold" />
+            )}
           </motion.div>
         </div>
       </div>

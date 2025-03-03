@@ -14,7 +14,7 @@ import star5 from "@/public/star5.png";
 import bg_product from "@/public/hero_products.png";
 import bg_gold from "@/public/bg_gold.png";
 import bg_gold_mobile from "@/public/bg_gold_mobile.png";
-import ramadaan_logo from "@/public/ramadaan_logo.png";
+import ramadaanAR_logo from "@/public/ramadan_ar_logo.png";
 import top_lamp from "@/public/top_left.png";
 import logo from "@/public/logo.png";
 
@@ -222,7 +222,7 @@ const HeroAr = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <Image src={ramadaan_logo} alt="Product" />
+            <Image src={ramadaanAR_logo} alt="Product" />
           </motion.div>
           <motion.div
             className="z-40 max-w-[350px] md:max-w-[440px]"
