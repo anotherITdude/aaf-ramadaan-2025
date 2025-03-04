@@ -187,7 +187,7 @@ const SectionFour = () => {
           className={` absolute  z-20
           ${
             locale === "/"
-              ? "right-[15%]  top-[73%]  max-w-[10px] md:right-[58%] md:top-[75%] md:max-w-[15px] "
+              ? "right-[5%]  top-[77%]  max-w-[10px] md:right-[58%] md:top-[75%] md:max-w-[15px] "
               : "left-[12%]  top-[75%]  max-w-[10px] md:right-[52%] md:top-[70%] md:max-w-[15px] "
           }
           `}

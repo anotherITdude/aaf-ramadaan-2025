@@ -15,6 +15,7 @@ import Navbar from "./Navbar";
 import logo from "@/public/logo.png";
 import ramadanGold from "@/public/ramadan_gold.png";
 import ramadaanAR_gold from "@/public/ramadan_gold_ar_logo.png";
+import Link from "next/link";
 
 const SectionTwo = () => {
   const locale = usePathname();
@@ -85,11 +86,12 @@ const SectionTwo = () => {
         <Navbar />
       </div>
       <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex z-40 flex-row items-center justify-center">
-        <Image
-          className=" max-w-[200px] md:max-w-[280px]"
-          src={logo}
-          alt="Logo"
-        />
+        <Link href="/">
+          <Image
+            className=" max-w-[200px] md:max-w-[280px]"
+            src={logo}
+            alt="Logo"
+        /></Link>
       </div>
       <div className="sectiontwo relative flex min-h-[550px] md:min-h-[650px] flex-col justify-center items-start p-2 md:p-0  overflow-hidden">
         <div className="md:w-[50%] text-white flex flex-col gap-4 md:gap-6 p-4 mb-4 mt-32 md:mt-0 md:mb-0 md:p-10 z-40">
