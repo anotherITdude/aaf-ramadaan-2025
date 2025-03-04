@@ -101,7 +101,7 @@ const Hero = () => {
   return (
     <Section>
       <div
-        className="flex min-h-[700px] relative flex-col items-center justify-start
+        className="flex min-h-auto relative flex-col items-center justify-start
       hero overflow-hidden md:rounded-b-3xl
       "
       >
@@ -238,7 +238,7 @@ const Hero = () => {
         </div>
 
         <div
-          className="absolute bottom-2 md:bottom-0 flex flex-row items-center 
+          className="md:absolute bottom-2 md:bottom-0 flex flex-row items-center 
         justify-between w-full pl-2 md:pl-10 pr-2 md:pr-10"
         >
           <motion.div

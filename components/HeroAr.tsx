@@ -102,7 +102,7 @@ const Hero = () => {
   return (
     <Section>
       <div
-        className="flex  min-h-[95vh] md:min-h-[700px] relative flex-col items-center justify-start
+        className="flex  min-h-auto md:min-h-[700px] relative flex-col items-center justify-start
       hero overflow-hidden md:rounded-b-3xl
       "
       >
@@ -235,7 +235,7 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-2 md:bottom-0 flex flex-row items-center justify-between w-full pl-2 md:pl-10 pr-2 md:pr-10">
+        <div className="md:absolute bottom-2 md:bottom-0 flex flex-row items-center justify-between w-full pl-2 md:pl-10 pr-2 md:pr-10">
           <motion.div
             className="z-50 max-w-[150px] md:max-w-[300px] mt-[20%] md:mt-[18%]"
             initial={{ opacity: 0, x: "-10%" }}
