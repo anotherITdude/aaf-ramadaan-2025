@@ -101,7 +101,7 @@ const Hero = () => {
   return (
     <Section>
       <div
-        className="flex min-h-auto relative flex-col items-center justify-start
+        className="flex min-h-auto min-h-[700px] relative flex-col items-center justify-start
       hero overflow-hidden md:rounded-b-3xl
       "
       >

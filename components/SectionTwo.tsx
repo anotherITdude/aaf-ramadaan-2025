@@ -146,7 +146,7 @@ const SectionTwo = () => {
         className="absolute hidden md:block top-0 left-0 w-full h-full"
         initial={{ x: "50%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1 }}
       >
         <Image src={section2} alt="section2" fill />
       </motion.div>
