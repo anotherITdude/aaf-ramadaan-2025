@@ -6,14 +6,11 @@ import { ar } from "@/locales/ar";
 import { Translations } from "@/types";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import section4 from "@/public/section4_left.png";
-import ramadanGold from "@/public/ramadan_gold.png";
-import ramadaanAR_gold from "@/public/ramadan_gold_ar_logo.png";
+import section4 from "@/public/section4_left1.png";
+
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import moonStar from "@/public/moon_star.png";
 import star5 from "@/public/star5.png";
-
-
 
 const SectionFour = () => {
   const locale = usePathname();
@@ -23,13 +20,13 @@ const SectionFour = () => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
+      console.log("Scroll Y:", latest);
       scrollYState.set(latest);
     });
   }, [scrollY, scrollYState]);
   const [isBlinkingStar1, setIsBlinkingStar1] = useState(false);
-  const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);  
+  const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);
 
-  
   //const bgGoldY = useTransform(scrollYState, [0, 500], [0, 100]);
   const star1Y = useTransform(scrollYState, [0, 500], [0, -100]);
   const moonStarY = useTransform(scrollYState, [0, 1000], [0, -160]);
@@ -80,19 +77,20 @@ const SectionFour = () => {
 
   return (
     <Section className="relative overflow-hidden">
-      <div className="sectiontwo flex flex-col md:flex-row min-h-[650px] justify-center items-center pt-14 pb-14  md:pt-0 md:pb-0  p-6 md:p-10 md:rounded-b-3xl ">
-        <div className="w-full md:w-[40%] z-50">
-          <Image className="md:max-w-[340px] " src={section4} alt="section4 " />
+      <div className="sectiontwo flex flex-col md:flex-row min-h-[650px] justify-center items-center pt-14 pb-14  md:pt-0 md:pb-0  p-6 md:p-10 ">
+        <div className="w-full md:w-[50%] z-50">
+          <Image className="md:max-w-[360px] " src={section4} alt="section4 " />
         </div>
         <div
           dir={locale === "/" ? "ltr" : "rtl"}
           className={` w-full md:w-[60%] flex flex-col md:gap-y-5 gap-y-5
           ${locale === "/" ? "" : "justify-end"}
-          `}>
+          `}
+        >
           <motion.h2
-             initial={{ x: -20, opacity: 0 }} // Start off-screen to the left
-             whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
-             transition={{ duration: 1 }}
+            initial={{ x: -20, opacity: 0 }} // Start off-screen to the left
+            whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
+            transition={{ duration: 1 }}
             dangerouslySetInnerHTML={{ __html: t.section4title }}
             className={` text-white pt-4 md:pt-0
           ${
@@ -103,9 +101,9 @@ const SectionFour = () => {
           `}
           />
           <motion.p
-             initial={{ x: 20, opacity: 0 }} // Start off-screen to the left
-             whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
-             transition={{ duration: 1 }}
+            initial={{ x: 20, opacity: 0 }} // Start off-screen to the left
+            whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
+            transition={{ duration: 1 }}
             dangerouslySetInnerHTML={{ __html: t.section4Paragraph }}
             className={`text-white ${
               locale === "/"
@@ -113,47 +111,37 @@ const SectionFour = () => {
                 : "font-GE-SS-Text-Light text-right text-lg md:text-xl"
             }`}
           />
-          <motion.div
-             initial={{ x: -20, opacity: 0 }} // Start off-screen to the left
-             whileInView={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
-             transition={{ duration: 1 }}
-          >
-            {locale === "/ar" ? (
-              <Image className="max-w-[180px] justify-end" src={ramadaanAR_gold} alt="ramadanGold" />
-            ) : (
-              <Image className="max-w-[180px] justify-end" src={ramadanGold} alt="ramadanGold" />
-            )}
-          </motion.div>
         </div>
       </div>
       <div>
-      <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar2)}
+        <motion.div
           initial="initial"
           animate="animate"
           className="absolute right-[70%] md:right-[85%] top-[16%] md:top-[30%] max-w-[30px] md:max-w-[40px] z-20"
           style={{ y: moonStarY }}
         >
-          <Image src={moonStar} alt="Star 1" />
+          <Image src={moonStar} alt="Moon Star" />
         </motion.div>
 
         <motion.div
           variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
-          className="absolute right-[20%] md:right-[10%] top-[15%] md:top-[25%] max-w-[30px] md:max-w-[20px] z-20"
-          style={{ y: star2Y }}
+          className="absolute right-[20%] md:right-[10%] top-[15%] md:top-[30%] max-w-[30px] md:max-w-[20px] z-20"
+          style={{ y: moonStarY }}
         >
           <Image src={star5} alt="Star 1" />
         </motion.div>
 
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
           className={` absolute  z-20
-          ${locale === "/" ? "right-[30%] md:right-[15%] -bottom-[5%] md:bottom-[-0%] max-w-[15px] md:max-w-[20px] " :
-              'right-[82%]  bottom-[-2%]  md:right-[10%] md:bottom-[-5%] max-w-[15px] md:max-w-[20px]' }
+          ${
+            locale === "/"
+              ? "right-[30%] md:right-[15%] -bottom-[5%] md:bottom-[-2%] max-w-[15px] md:max-w-[20px] "
+              : "right-[82%]  bottom-[-2%]  md:right-[10%] md:bottom-[-5%] max-w-[15px] md:max-w-[20px]"
+          }
           `}
           style={{ y: star1Y }}
         >
@@ -165,8 +153,27 @@ const SectionFour = () => {
           initial="initial"
           animate="animate"
           className={` absolute  z-20
-          ${locale === "/" ? "right-[10%] md:right-[59%] md:bottom-[-7%] md:max-w-[15px]  bottom-[0%]  max-w-[20px] " :
-              'right-[82%] top-[65%] md:right-[58%] md:bottom-[-9%] md:max-w-[15px]  max-w-[10px] ' }
+          ${
+            locale === "/"
+              ? "right-[10%] md:right-[59%] md:bottom-[-7%] md:max-w-[15px]  bottom-[0%]  max-w-[20px] "
+              : "right-[82%] top-[65%] md:right-[58%] md:bottom-[-9%] md:max-w-[15px]  max-w-[10px] "
+          }
+          `}
+          style={{ y: star2Y }}
+        >
+          <Image src={star5} alt="Star 1" />
+        </motion.div>
+
+        <motion.div
+          variants={createBlinkingAnimation(isBlinkingStar1)}
+          initial="initial"
+          animate="animate"
+          className={` absolute  z-20
+          ${
+            locale === "/"
+              ? "right-[10%] md:right-[50%] md:top-[33%] md:max-w-[15px]  bottom-[0%]  max-w-[20px] "
+              : "right-[82%] top-[65%] md:right-[58%] md:bottom-[-9%] md:max-w-[15px]  max-w-[10px] "
+          }
           `}
           style={{ y: star2Y }}
         >
@@ -178,8 +185,11 @@ const SectionFour = () => {
           initial="initial"
           animate="animate"
           className={` absolute  z-20
-          ${locale === "/" ? "right-[8%]  top-[60%]  max-w-[10px] md:right-[62%] md:bottom-[-9%] md:max-w-[15px] " :
-              'right-[32%]  top-[65%]  max-w-[10px] md:right-[52%] md:top-[90%] md:max-w-[15px] ' }
+          ${
+            locale === "/"
+              ? "right-[8%]  top-[60%]  max-w-[10px] md:right-[58%] md:top-[55%] md:max-w-[15px] "
+              : "right-[32%]  top-[65%]  max-w-[10px] md:right-[52%] md:top-[90%] md:max-w-[15px] "
+          }
           `}
           style={{ y: star3Y }}
         >

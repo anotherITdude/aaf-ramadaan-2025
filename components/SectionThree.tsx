@@ -110,7 +110,7 @@ const SectionThree = () => {
               <YoutubeEmbed className="rounded-3xl" embedId="dBcAZdtXOnM" />
               <p
                 dangerouslySetInnerHTML={{ __html: t.videoTitle }}
-                className={`  text-white
+                className={`text-white
                   ${
                     locale === "/ar"
                       ? "font-GE-SS-Text-Light text-xl md:text-lg mt-2 text-right md:text-center"

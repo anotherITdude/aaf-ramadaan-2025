@@ -4,25 +4,23 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import Section from "./Section";
-import Navbar from "./Navbar";
 import { en } from "@/locales/en";
 import { ar } from "@/locales/ar";
 import { Translations } from "@/types";
 import { usePathname } from "next/navigation";
-import moonSpoon from "@/public/moon_with_spoon.png";
+import moonSpoon from "@/public/moon_with_spoon1.png";
 import star5 from "@/public/star5.png";
 import bg_product from "@/public/hero_products.png";
 import bg_gold from "@/public/bg_gold.png";
 import bg_gold_mobile from "@/public/bg_gold_mobile.png";
-import ramadaanAR_logo from "@/public/ramadan_ar_logo.png";
+import ramadaan_logo from "@/public/ramadaan_logo.png";
 import top_lamp from "@/public/top_left.png";
 import logo from "@/public/logo.png";
 
-const HeroAr = () => {
+const Hero = () => {
   const locale = usePathname();
   const t: Translations = locale === "/" ? en : ar;
   const { scrollY } = useScroll();
-  const bgGoldY = useTransform(scrollY, [0, 500], [0, 100]);
   const star1Y = useTransform(scrollY, [0, 500], [0, -50]);
   const star2Y = useTransform(scrollY, [0, 500], [0, -30]);
   const star3Y = useTransform(scrollY, [0, 500], [0, -70]);
@@ -40,6 +38,19 @@ const HeroAr = () => {
   const [isBlinkingStar7, setIsBlinkingStar7] = useState(false);
   const [isBlinkingStar8, setIsBlinkingStar8] = useState(false);
 
+  // Refresh the page after 2 minutes
+  useEffect(() => {
+    const refreshTimeout = setTimeout(() => {
+      window.location.reload(); // Refresh the page
+    }, 120000);
+
+    // Cleanup the timeout on unmount
+    return () => {
+      clearTimeout(refreshTimeout);
+    };
+  }, []);
+
+
   useEffect(() => {
     const blinkAnimation = (
       setBlinking: React.Dispatch<React.SetStateAction<boolean>>,
@@ -51,7 +62,7 @@ const HeroAr = () => {
     };
 
     const randomInterval = () =>
-      Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
+      Math.floor(Math.random() * (10000 - 3000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
 
     const intervals = [
       setInterval(() => blinkAnimation(setIsBlinkingStar1), randomInterval()),
@@ -77,7 +88,7 @@ const HeroAr = () => {
     return {
       initial: { opacity: 1 },
       animate: {
-        opacity: isBlinking ? [1, 0, 0, .5,  1] : 1,
+        opacity: isBlinking ? [1, 0, 0, 0.5, 1] : 1,
         transition: {
           duration: randomDuration, // Use the random duration
           repeat: isBlinking ? Infinity : 0,
@@ -90,38 +101,47 @@ const HeroAr = () => {
 
   return (
     <Section>
-       <div className="absolute z-50"> <Navbar  /></div>
       <div
         className="flex  min-h-[95vh] md:min-h-[700px] relative flex-col items-center justify-start
-      hero overflow-hidden md:rounded-t-3xl
+      hero overflow-hidden md:rounded-b-3xl
       "
       >
-        <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">
-          <Image className=" max-w-[200px] md:max-w-[300px]" src={logo} alt="Logo" />
+        <div className="absolute -right-12 -top-[62px] md:-right-10 md:-top-15 flex flex-row items-center justify-center">
+          <Image
+            className=" max-w-[200px] md:max-w-[280px]"
+            src={logo}
+            alt="Logo"
+          />
         </div>
-        <div className="absolute  flex flex-row items-center justify-center
-        left-4 md:left-16 -top-2 md:top-0">
-          <Image className="max-w-[100px] md:max-w-[110px]" src={top_lamp} alt="top lamps" />
+        <div
+          className="absolute  flex flex-row items-center justify-center
+        left-4 md:left-16 -top-2 md:top-0 z-20"
+        >
+          <Image
+            className="max-w-[100px] md:max-w-[110px]"
+            src={top_lamp}
+            alt="top lamps"
+          />
         </div>
         <motion.div
           initial={{ opacity: 0, y: "-10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="flex z-40 flex-col md:flex-row items-center justify-center"
+          className="flex flex-col z-40 md:flex-row items-center justify-center"
         >
           <Image
-            className="max-w-[58%] z-50 md:max-w-[410px] mt-[40%] sm:mt-[63%] md:mt-[15%]"
+            className="max-w-[58%] z-50 md:max-w-[390px] mt-[39%] sm:mt-[62%] md:mt-[15%]"
             src={moonSpoon}
             alt="Moon with Spoon"
           />
           <motion.div
             style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-4 sm:mt-7 md:mt-0 z-50 md:-ml-48 text-secondary 
+            className={`   z-50  text-secondary 
                 ${
                   locale === "/ar"
-                    ?  "font-Zain-Black text-5xl md:text-6xl"
-                    : "font-Gotham-Bold text-2xl md:text-3xl"
+                    ? "font-Zain-Black text-5xl md:text-6xl mt-3 sm:mt-6 md:-ml-48 md:mt-16"
+                    : "font-Gotham-Bold text-2xl md:text-3xl mt-3 sm:mt-6 md:-ml-48 md:mt-20"
                 }
                 `}
           ></motion.div>
@@ -129,8 +149,8 @@ const HeroAr = () => {
 
         {/* Background Image */}
         <motion.div
-          className="absolute bottom-0 md:-bottom-2 z-10"
-          style={{ y: bgGoldY }}
+          className="absolute bottom-0 md:bottom-0 z-10"
+          
           initial={{ opacity: 0, y: "10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -154,7 +174,7 @@ const HeroAr = () => {
             variants={createBlinkingAnimation(isBlinkingStar2)}
             initial="initial"
             animate="animate"
-            className="absolute left-[35%] md:left-[30%] top-[5%] max-w-[10px] md:max-w-[30px] z-10"
+            className="absolute left-[35%] md:left-[20%] top-[12%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star2Y }}
           >
             <Image src={star5} alt="Star 2" />
@@ -163,7 +183,7 @@ const HeroAr = () => {
             variants={createBlinkingAnimation(isBlinkingStar3)}
             initial="initial"
             animate="animate"
-            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[29%] max-w-[10px] md:max-w-[30px] z-20"
+            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[20%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
@@ -222,7 +242,7 @@ const HeroAr = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
           >
-            <Image src={ramadaanAR_logo} alt="Product" />
+            <Image src={ramadaan_logo} alt="Product" />
           </motion.div>
           <motion.div
             className="z-40 max-w-[350px] md:max-w-[440px]"
@@ -238,4 +258,4 @@ const HeroAr = () => {
   );
 };
 
-export default HeroAr;
+export default Hero;

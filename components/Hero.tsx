@@ -4,12 +4,11 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import Section from "./Section";
-import Navbar from "./Navbar";
 import { en } from "@/locales/en";
 import { ar } from "@/locales/ar";
 import { Translations } from "@/types";
 import { usePathname } from "next/navigation";
-import moonSpoon from "@/public/moon_with_spoon.png";
+import moonSpoon from "@/public/moon_with_spoon1.png";
 import star5 from "@/public/star5.png";
 import bg_product from "@/public/hero_products.png";
 import bg_gold from "@/public/bg_gold.png";
@@ -22,7 +21,6 @@ const Hero = () => {
   const locale = usePathname();
   const t: Translations = locale === "/" ? en : ar;
   const { scrollY } = useScroll();
-  const bgGoldY = useTransform(scrollY, [0, 500], [0, 100]);
   const star1Y = useTransform(scrollY, [0, 500], [0, -50]);
   const star2Y = useTransform(scrollY, [0, 500], [0, -30]);
   const star3Y = useTransform(scrollY, [0, 500], [0, -70]);
@@ -64,7 +62,7 @@ const Hero = () => {
     };
 
     const randomInterval = () =>
-      Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
+      Math.floor(Math.random() * (10000 - 3000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
 
     const intervals = [
       setInterval(() => blinkAnimation(setIsBlinkingStar1), randomInterval()),
@@ -103,18 +101,14 @@ const Hero = () => {
 
   return (
     <Section>
-      <div className="absolute z-50">
-        {" "}
-        <Navbar />
-      </div>
       <div
         className="flex  min-h-[95vh] md:min-h-[700px] relative flex-col items-center justify-start
-      hero overflow-hidden md:rounded-t-3xl
+      hero overflow-hidden md:rounded-b-3xl
       "
       >
-        <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex flex-row items-center justify-center">
+        <div className="absolute -right-12 -top-[62px] md:-right-10 md:-top-15 flex flex-row items-center justify-center">
           <Image
-            className=" max-w-[200px] md:max-w-[300px]"
+            className=" max-w-[200px] md:max-w-[280px]"
             src={logo}
             alt="Logo"
           />
@@ -136,14 +130,14 @@ const Hero = () => {
           className="flex flex-col z-40 md:flex-row items-center justify-center"
         >
           <Image
-            className="max-w-[58%] z-50 md:max-w-[410px] mt-[39%] sm:mt-[62%] md:mt-[15%]"
+            className="max-w-[58%] z-50 md:max-w-[390px] mt-[39%] sm:mt-[62%] md:mt-[15%]"
             src={moonSpoon}
             alt="Moon with Spoon"
           />
           <motion.div
             style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-3 sm:mt-6 md:mt-0 z-50 md:-ml-48 text-secondary 
+            className={` mt-3 sm:mt-6 md:mt-16 z-50 md:-ml-48 text-secondary 
                 ${
                   locale === "/ar"
                     ? "font-Zain-Black text-5xl md:text-6xl"
@@ -155,8 +149,8 @@ const Hero = () => {
 
         {/* Background Image */}
         <motion.div
-          className="absolute bottom-0 md:-bottom-2 z-10"
-          style={{ y: bgGoldY }}
+          className="absolute bottom-0 md:bottom-0 z-10"
+          
           initial={{ opacity: 0, y: "10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -180,7 +174,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar2)}
             initial="initial"
             animate="animate"
-            className="absolute left-[35%] md:left-[30%] top-[5%] max-w-[10px] md:max-w-[30px] z-10"
+            className="absolute left-[35%] md:left-[20%] top-[12%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star2Y }}
           >
             <Image src={star5} alt="Star 2" />
@@ -189,7 +183,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar3)}
             initial="initial"
             animate="animate"
-            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[29%] max-w-[10px] md:max-w-[30px] z-10"
+            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[20%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
