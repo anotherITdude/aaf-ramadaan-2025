@@ -50,7 +50,6 @@ const Hero = () => {
     };
   }, []);
 
-
   useEffect(() => {
     const blinkAnimation = (
       setBlinking: React.Dispatch<React.SetStateAction<boolean>>,
@@ -102,7 +101,7 @@ const Hero = () => {
   return (
     <Section>
       <div
-        className="flex  min-h-[95vh] md:min-h-[700px] relative flex-col items-center justify-start
+        className="flex min-h-[700px] relative flex-col items-center justify-start
       hero overflow-hidden md:rounded-b-3xl
       "
       >
@@ -130,18 +129,22 @@ const Hero = () => {
           className="flex flex-col z-40 md:flex-row items-center justify-center"
         >
           <Image
-            className="max-w-[58%] z-50 md:max-w-[390px] mt-[39%] sm:mt-[62%] md:mt-[15%]"
+            className={` ${
+              locale === "/ar"
+                ? "max-w-[49%] z-50 md:max-w-[390px] mt-[63%] sm:mt-[49%] md:mt-[15%]"
+                : "max-w-[49%] z-50 md:max-w-[390px] mt-[63%] sm:mt-[49%] md:mt-[15%]"
+            }`}
             src={moonSpoon}
             alt="Moon with Spoon"
           />
           <motion.div
             style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
-            className={` mt-3 sm:mt-6 md:mt-16 z-50 md:-ml-48 text-secondary 
+            className={` z-50  text-secondary 
                 ${
                   locale === "/ar"
-                    ? "font-Zain-Black text-5xl md:text-6xl"
-                    : "font-Gotham-Bold text-2xl md:text-3xl"
+                    ? "font-Zain-Black text-5xl md:text-6xl mt-20 sm:mt-28 md:mt-16 md:-ml-48"
+                    : "font-Gotham-Bold text-2xl md:text-3xl mt-20 sm:mt-14 md:mt-16 md:-ml-48"
                 }
                 `}
           ></motion.div>
@@ -150,7 +153,6 @@ const Hero = () => {
         {/* Background Image */}
         <motion.div
           className="absolute bottom-0 md:bottom-0 z-10"
-          
           initial={{ opacity: 0, y: "10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -235,7 +237,10 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-2 md:bottom-0 flex flex-row items-center justify-between w-full pl-2 md:pl-10 pr-2 md:pr-10">
+        <div
+          className="absolute bottom-2 md:bottom-0 flex flex-row items-center 
+        justify-between w-full pl-2 md:pl-10 pr-2 md:pr-10"
+        >
           <motion.div
             className="z-50 max-w-[150px] md:max-w-[300px] mt-[20%] md:mt-[18%]"
             initial={{ opacity: 0, x: "-10%" }}
