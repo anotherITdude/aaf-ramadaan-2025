@@ -91,7 +91,8 @@ const SectionTwo = () => {
             className=" max-w-[200px] md:max-w-[280px]"
             src={logo}
             alt="Logo"
-        /></Link>
+          />
+        </Link>
       </div>
       <div className="sectiontwo relative flex min-h-[550px] md:min-h-[650px] flex-col justify-center items-start p-2 md:p-0  overflow-hidden">
         <div className="md:w-[50%] text-white flex flex-col gap-4 md:gap-6 p-4 mb-4 mt-32 md:mt-0 md:mb-0 md:p-10 z-40">
