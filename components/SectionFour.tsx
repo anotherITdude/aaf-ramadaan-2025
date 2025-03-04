@@ -139,8 +139,8 @@ const SectionFour = () => {
           className={` absolute  z-20
           ${
             locale === "/"
-              ? "right-[55%] md:right-[15%] -bottom-[5%] md:bottom-[-2%] max-w-[10px] md:max-w-[20px] "
-              : "right-[82%]  bottom-[-5%]  md:right-[10%] md:bottom-[-5%] max-w-[15px] md:max-w-[20px]"
+              ? "right-[55%] md:right-[15%] -bottom-[7%] md:bottom-[-2%] max-w-[10px] md:max-w-[20px] "
+              : "right-[82%]  bottom-[-7%]  md:right-[10%] md:bottom-[-5%] max-w-[15px] md:max-w-[20px]"
           }
           `}
           style={{ y: star1Y }}
@@ -156,7 +156,7 @@ const SectionFour = () => {
           ${
             locale === "/"
               ? "right-[2%] md:right-[59%] md:bottom-[-7%] md:max-w-[15px]  bottom-[10%]  max-w-[10px] "
-              : "right-[2%] top-[65%] md:right-[58%] md:bottom-[-9%] md:max-w-[15px]  max-w-[10px] "
+              : "right-[2%] bottom-[35%] md:right-[58%] md:bottom-[9%] md:max-w-[15px]  max-w-[10px] "
           }
           `}
           style={{ y: star2Y }}
@@ -172,7 +172,7 @@ const SectionFour = () => {
           ${
             locale === "/"
               ? "right-[10%] md:right-[50%] md:top-[33%] md:max-w-[15px]  bottom-[-7%]  max-w-[10px] "
-              : "left-[12%] top-[77%] md:right-[58%] md:bottom-[-9%] md:max-w-[15px]  max-w-[10px] "
+              : "left-[2%] bottom-[20%] md:right-[58%] md:bottom-[-9%] md:max-w-[15px]  max-w-[10px] "
           }
           `}
           style={{ y: star2Y }}
@@ -188,7 +188,7 @@ const SectionFour = () => {
           ${
             locale === "/"
               ? "right-[5%]  top-[77%]  max-w-[10px] md:right-[58%] md:top-[75%] md:max-w-[15px] "
-              : "left-[12%]  top-[75%]  max-w-[10px] md:right-[52%] md:top-[70%] md:max-w-[15px] "
+              : "right-[32%]  top-[75%]  max-w-[10px] md:right-[55%] md:top-[70%] md:max-w-[15px] "
           }
           `}
           style={{ y: star3Y }}

@@ -129,8 +129,8 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="flex flex-col z-40 md:flex-row items-center justify-center"
         >
-          <Image
-            className="max-w-[58%] z-50 md:max-w-[390px] mt-[39%] sm:mt-[62%] md:mt-[15%]"
+          <Image 
+            className="max-w-[58%] z-50 md:max-w-[390px] mt-[47%] sm:mt-[69%] md:mt-[15%]"
             src={moonSpoon}
             alt="Moon with Spoon"
           />
@@ -140,7 +140,7 @@ const Hero = () => {
             className={`   z-50  text-secondary 
                 ${
                   locale === "/ar"
-                    ? "font-Zain-Black text-5xl md:text-6xl mt-3 sm:mt-6 md:-ml-48 md:mt-16"
+                    ? "font-Zain-Black text-5xl md:text-6xl md:-ml-48 mt-16 sm:mt-20 md:mt-16"
                     : "font-Gotham-Bold text-2xl md:text-3xl mt-3 sm:mt-6 md:-ml-48 md:mt-20"
                 }
                 `}
@@ -165,7 +165,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar1)}
             initial="initial"
             animate="animate"
-            className="absolute left-[10%] md:left-[25%] top-[45%] max-w-[20px] md:max-w-[50px] z-20"
+            className="absolute left-[10%] md:left-[25%] top-[55%] max-w-[10px] md:max-w-[50px] z-20"
             style={{ y: star1Y }}
           >
             <Image src={star5} alt="Star 1" />
@@ -183,7 +183,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar3)}
             initial="initial"
             animate="animate"
-            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[20%] max-w-[10px] md:max-w-[30px] z-10"
+            className="absolute left-[10%] md:left-[40%] bottom-[22%] md:bottom-[20%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />

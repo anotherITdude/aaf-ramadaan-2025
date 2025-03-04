@@ -167,7 +167,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar1)}
             initial="initial"
             animate="animate"
-            className="absolute left-[10%] md:left-[25%] top-[45%] max-w-[20px] md:max-w-[50px] z-20"
+            className="absolute left-[10%] md:left-[25%] top-[55%] max-w-[10px] md:max-w-[50px] z-20"
             style={{ y: star1Y }}
           >
             <Image src={star5} alt="Star 1" />
@@ -185,7 +185,7 @@ const Hero = () => {
             variants={createBlinkingAnimation(isBlinkingStar3)}
             initial="initial"
             animate="animate"
-            className="absolute left-[25%] md:left-[40%] bottom-[22%] md:bottom-[20%] max-w-[10px] md:max-w-[30px] z-10"
+            className="absolute left-[5%] md:left-[40%] bottom-[22%] md:bottom-[20%] max-w-[10px] md:max-w-[30px] z-10"
             style={{ y: star3Y }}
           >
             <Image src={star5} alt="Star 3" />
