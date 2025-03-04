@@ -31,7 +31,7 @@ const SectionFour = () => {
   const star1Y = useTransform(scrollYState, [0, 500], [0, -100]);
   const moonStarY = useTransform(scrollYState, [0, 1000], [0, -160]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
-  const star3Y = useTransform(scrollYState, [0, 1000], [0, -60]);
+  const star3Y = useTransform(scrollYState, [0, 900], [0, -200]);
 
   useEffect(() => {
     const blinkAnimation = (
@@ -187,8 +187,8 @@ const SectionFour = () => {
           className={` absolute  z-20
           ${
             locale === "/"
-              ? "right-[8%]  top-[60%]  max-w-[10px] md:right-[58%] md:top-[55%] md:max-w-[15px] "
-              : "right-[32%]  top-[65%]  max-w-[10px] md:right-[52%] md:top-[90%] md:max-w-[15px] "
+              ? "right-[8%]  top-[60%]  max-w-[10px] md:right-[58%] md:top-[75%] md:max-w-[15px] "
+              : "right-[32%]  top-[65%]  max-w-[10px] md:right-[52%] md:top-[100%] md:max-w-[15px] "
           }
           `}
           style={{ y: star3Y }}

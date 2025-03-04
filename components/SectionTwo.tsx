@@ -84,7 +84,7 @@ const SectionTwo = () => {
         {" "}
         <Navbar />
       </div>
-      <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex z-50 flex-row items-center justify-center">
+      <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex z-40 flex-row items-center justify-center">
         <Image
           className=" max-w-[200px] md:max-w-[280px]"
           src={logo}
@@ -92,7 +92,7 @@ const SectionTwo = () => {
         />
       </div>
       <div className="sectiontwo relative flex min-h-[550px] md:min-h-[650px] flex-col justify-center items-start p-2 md:p-0  overflow-hidden">
-        <div  className="md:w-[50%] text-white flex flex-col gap-6 p-4 md:p-10 z-50">
+        <div className="md:w-[50%] text-white flex flex-col gap-4 md:gap-6 p-4 mb-4 mt-32 md:mt-0 md:mb-0 md:p-10 z-40">
           <motion.h2
             initial={{ x: -20, opacity: 0 }} // Start off-screen to the left
             animate={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
@@ -100,7 +100,7 @@ const SectionTwo = () => {
             className={`${
               locale === "/"
                 ? "font-Gotham-Bold text-2xl md:text-3xl "
-                : "font-Zain-Black text-2xl md:text-4xl text-right md:pr-4"
+                : "font-Zain-Black text-3xl md:text-4xl text-right   md:pr-4"
             }`}
             dangerouslySetInnerHTML={{ __html: t.section2title }}
           />
@@ -111,12 +111,14 @@ const SectionTwo = () => {
             className={`${
               locale === "/"
                 ? "font-Gotham-Book text-lg md:text-xl"
-                : "font-GE-SS-Text-Light text-right text-lg md:text-xl pr-4"
+                : "font-GE-SS-Text-Light text-right text-lg md:text-xl md:pr-4"
             }`}
             dangerouslySetInnerHTML={{ __html: t.section2Paragraph }}
           />
           <motion.div
-            className={`flex ${locale === "/ar" ? "justify-end" : "justify-start"}`}
+            className={`flex ${
+              locale === "/ar" ? "justify-end" : "justify-start"
+            }`}
             initial={{ x: -20, opacity: 0 }} // Start off-screen to the left
             animate={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
             transition={{ duration: 1 }}
@@ -165,8 +167,8 @@ const SectionTwo = () => {
           animate="animate"
           className={` absolute  ${
             locale === "/"
-              ? "right-[20%] md:right-[50%] top-[15%] md:top-[13%] max-w-[30px] md:max-w-[40px] z-20"
-              : "right-[20%] md:right-[48%] top-[15%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
+              ? "right-[50%] md:right-[50%] top-[10%] md:top-[13%] max-w-[30px] md:max-w-[40px] z-20"
+              : "right-[50%] md:right-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
           }`}
           style={{ y: moonStarY }}
         >
@@ -176,7 +178,11 @@ const SectionTwo = () => {
           //variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
-          className="absolute right-[10%] md:left-[45%] bottom-[20%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
+          className={`absolute ${
+            locale === "/"
+              ? "right-[10%] md:left-[45%] bottom-[20%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
+              : "left-[10%] md:left-[45%] bottom-[2%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
+          }`}
           style={{ y: star2Y }}
         >
           <Image src={star5} alt="Star 1" />
@@ -185,7 +191,11 @@ const SectionTwo = () => {
           //variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
-          className="absolute right-[20%] md:left-[43%] bottom-[25%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
+          className={`absolute ${
+            locale === "/"
+              ? "right-[20%] md:left-[43%] bottom-[10%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
+              : "left-[20%] md:left-[43%] bottom-[20%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
+          } max-w-[10px] md:max-w-[10px] z-20  `}
           style={{ y: star2Y }}
         >
           <Image src={star5} alt="Star 1" />
@@ -194,7 +204,11 @@ const SectionTwo = () => {
           variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
-          className="absolute right-[25%] md:left-[50%] bottom-[20%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+          className={`absolute ${
+            locale === "/"
+              ? "right-[25%] md:left-[50%] bottom-[17%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+              : "right-[65%] md:left-[50%] bottom-[10%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+          }`}
           style={{ y: star2Y }}
         >
           <Image src={star5} alt="Star 1" />
