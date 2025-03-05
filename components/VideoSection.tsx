@@ -4,7 +4,7 @@ import YoutubeEmbed from "./YoutubeEmbed";
 
 const VideoSection = () => {
   return (
-    <Section className="relative overflow-hidden min-h-[600px]">
+    <Section className="relative overflow-hidden min-h-[600px] sectiontwo">
       <YoutubeEmbed embedId="dBcAZdtXOnM" className="w-full h-full" />
     </Section>
   );
