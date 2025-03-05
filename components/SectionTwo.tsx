@@ -51,13 +51,9 @@ const SectionTwo = () => {
     };
   }, [mouseX, mouseY]);
 
-  // Calculate the position for the moon image
-  // const moonX = useTransform(mouseX, [0, window.innerWidth], [-20, 20]);
-  // const moonY = useTransform(mouseY, [0, window.innerHeight], [-20, 20]);
-
-  // Calculate the position for the moonStar image
-  const moonStarX = useTransform(mouseX, [0, window.innerWidth], [-30, 30]);
-  const moonStarY = useTransform(mouseY, [0, window.innerHeight], [-30, 30]);
+  // Calculate the position for the moonStar image with a parallax effect
+  const moonStarX = useTransform(mouseX, [0, window.innerWidth], [-50, 50]);
+  const moonStarY = useTransform(mouseY, [0, window.innerHeight], [-50, 50]);
 
   //const bgGoldY = useTransform(scrollYState, [0, 500], [0, 100]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
@@ -191,7 +187,7 @@ const SectionTwo = () => {
         </motion.div>
 
         <motion.div
-          style={{ x: moonStarX, y: moonStarY }} // Apply the calculated position for moonStar
+           // Apply the calculated position for moonStar
           className={`absolute ${
             locale === "/"
               ? "right-[50%] md:right-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
@@ -206,10 +202,10 @@ const SectionTwo = () => {
           animate="animate"
           className={`absolute ${
             locale === "/"
-              ? "right-[10%] md:left-[45%] bottom-[20%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
-              : "left-[10%] md:left-[45%] bottom-[2%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
+              ? "right-[10%] md:left-[45%] bottom-[10%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
+              : "left-[25%] md:left-[45%] bottom-[2%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
           }`}
-          style={{ y: star2Y }}
+          style={{ x: moonStarX, y: moonStarY }}
         >
           <Image src={star5} alt="Star 1" />
         </motion.div>
@@ -219,7 +215,7 @@ const SectionTwo = () => {
           animate="animate"
           className={`absolute ${
             locale === "/"
-              ? "right-[20%] md:left-[43%] bottom-[10%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
+              ? "right-[10%] md:left-[43%] bottom-[10%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
               : "left-[20%] md:left-[43%] bottom-[20%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
           } max-w-[10px] md:max-w-[10px] z-20  `}
           style={{ y: star2Y }}
@@ -232,8 +228,8 @@ const SectionTwo = () => {
           animate="animate"
           className={`absolute ${
             locale === "/"
-              ? "right-[25%] md:left-[50%] bottom-[17%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
-              : "right-[65%] md:left-[50%] bottom-[10%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+              ? "left-[65%] md:left-[50%] bottom-[7%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+              : "left-[30%] md:left-[50%] bottom-[10%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
           }`}
           style={{ y: star2Y }}
         >
