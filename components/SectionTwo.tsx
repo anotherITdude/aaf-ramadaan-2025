@@ -25,7 +25,7 @@ const SectionTwo = () => {
 
   const [isBlinkingStar1, setIsBlinkingStar1] = useState(false);
   const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);
-
+  const [isBlinkingStar3, setIsBlinkingStar3] = useState(false);
   useEffect(() => {
     return scrollY.onChange((latest) => {
       scrollYState.set(latest);
@@ -34,6 +34,7 @@ const SectionTwo = () => {
 
   //const bgGoldY = useTransform(scrollYState, [0, 500], [0, 100]);
   const moonStarY = useTransform(scrollYState, [0, 1000], [0, -160]);
+  const star1Y = useTransform(scrollYState, [0, 1000], [0, -200]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
   const star3Y = useTransform(scrollYState, [0, 1000], [0, -500]);
 
@@ -48,11 +49,12 @@ const SectionTwo = () => {
     };
 
     const randomInterval = () =>
-      Math.floor(Math.random() * (10000 - 2000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
+      Math.floor(Math.random() * (10000 - 4000 + 1)) + 2000; // Random interval between 2000ms and 5000ms
 
     const intervals = [
       setInterval(() => blinkAnimation(setIsBlinkingStar1), randomInterval()),
       setInterval(() => blinkAnimation(setIsBlinkingStar2), randomInterval()),
+      setInterval(() => blinkAnimation(setIsBlinkingStar3), randomInterval()),
     ];
 
     return () => intervals.forEach(clearInterval);
@@ -156,7 +158,7 @@ const SectionTwo = () => {
       </div>
       <div className="z-20">
         <motion.div
-          variants={createBlinkingAnimation(isBlinkingStar1)}
+          variants={createBlinkingAnimation(isBlinkingStar3)}
           initial="initial"
           animate="animate"
           className="absolute left-[2%] md:left-[5%] bottom-[30%] md:bottom-[5%] max-w-[10px] md:max-w-[20px] z-20"
@@ -192,7 +194,7 @@ const SectionTwo = () => {
           <Image src={star5} alt="Star 1" />
         </motion.div>
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
+          variants={createBlinkingAnimation(isBlinkingStar1)}
           initial="initial"
           animate="animate"
           className={`absolute ${
@@ -205,15 +207,28 @@ const SectionTwo = () => {
           <Image src={star5} alt="Star 1" />
         </motion.div>
         <motion.div
+          variants={createBlinkingAnimation(isBlinkingStar3)}
+          initial="initial"
+          animate="animate"
+          className={`absolute ${
+            locale === "/"
+              ? "right-[20%] md:left-[43%] bottom-[10%] hidden md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
+              : "left-[20%] md:left-[50%] hidden md:block bottom-[20%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
+          } max-w-[10px] md:max-w-[10px] z-20  `}
+          style={{ y: star1Y }}
+        >
+          <Image src={star5} alt="Star 1" />
+        </motion.div>
+        <motion.div
           variants={createBlinkingAnimation(isBlinkingStar2)}
           initial="initial"
           animate="animate"
           className={`absolute ${
             locale === "/"
               ? "right-[25%] md:left-[50%] bottom-[17%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
-              : "right-[65%] md:left-[50%] bottom-[10%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+              : "right-[65%] md:left-[50%] bottom-[10%] md:top-[18%] max-w-[10px] md:max-w-[10px] z-20"
           }`}
-          style={{ y: star2Y }}
+          style={{ y: star1Y }}
         >
           <Image src={star5} alt="Star 1" />
         </motion.div>
