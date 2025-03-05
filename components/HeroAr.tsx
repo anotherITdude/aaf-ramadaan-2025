@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import Section from "./Section";
 import { en } from "@/locales/en";
@@ -38,34 +38,6 @@ const Hero = () => {
   const [isBlinkingStar7, setIsBlinkingStar7] = useState(false);
   const [isBlinkingStar8, setIsBlinkingStar8] = useState(false);
 
-  // Create MotionValues for mouse position
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  // Effect to track mouse movement
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      mouseX.set(event.clientX);
-      mouseY.set(event.clientY);
-    };
-
-    // Check if window is defined
-    if (typeof window !== "undefined") {
-      window.addEventListener("mousemove", handleMouseMove);
-    }
-
-    // Cleanup the event listener on unmount
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("mousemove", handleMouseMove);
-      }
-    };
-  }, [mouseX, mouseY]);
-
-  // Calculate the position for the moon image
-  const moonX = useTransform(mouseX, [0, window.innerWidth], [-20, 20]);
-  const moonY = useTransform(mouseY, [0, window.innerHeight], [-20, 20]);
-
   // Refresh the page after 2 minutes
   useEffect(() => {
     const refreshTimeout = setTimeout(() => {
@@ -77,6 +49,7 @@ const Hero = () => {
       clearTimeout(refreshTimeout);
     };
   }, []);
+
 
   useEffect(() => {
     const blinkAnimation = (
@@ -156,12 +129,11 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="flex flex-col z-40 md:flex-row items-center justify-center"
         >
-          <motion.div
-            style={{ x: moonX, y: moonY }}
-            className={`max-w-[49%] z-50 md:max-w-[390px] mt-[63%] sm:mt-[49%] md:mt-[15%]`}
-          >
-            <Image src={moonSpoon} alt="Moon with Spoon" />
-          </motion.div>
+          <Image 
+            className="max-w-[58%] z-50 md:max-w-[390px] mt-[47%] sm:mt-[69%] md:mt-[15%]"
+            src={moonSpoon}
+            alt="Moon with Spoon"
+          />
           <motion.div
             style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
@@ -178,6 +150,7 @@ const Hero = () => {
         {/* Background Image */}
         <motion.div
           className="absolute bottom-0 md:bottom-0 z-10"
+          
           initial={{ opacity: 0, y: "10%" }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

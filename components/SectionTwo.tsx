@@ -23,10 +23,6 @@ const SectionTwo = () => {
   const scrollYState = useMotionValue(0);
   const { scrollY } = useScroll();
 
-  // Create MotionValues for mouse position
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
   const [isBlinkingStar1, setIsBlinkingStar1] = useState(false);
   const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);
 
@@ -36,31 +32,8 @@ const SectionTwo = () => {
     });
   }, [scrollY, scrollYState]);
 
-  // Effect to track mouse movement
-  useEffect(() => {
-    const handleMouseMove = (event: MouseEvent) => {
-      mouseX.set(event.clientX);
-      mouseY.set(event.clientY);
-    };
-
-    // Check if window is defined
-    if (typeof window !== "undefined") {
-      window.addEventListener("mousemove", handleMouseMove);
-    }
-
-    // Cleanup the event listener on unmount
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("mousemove", handleMouseMove);
-      }
-    };
-  }, [mouseX, mouseY]);
-
-  // Calculate the position for the moonStar image with a parallax effect
-  const moonStarX = useTransform(mouseX, [0, window.innerWidth], [-30, 30]);
-  const moonStarY = useTransform(mouseY, [0, window.innerHeight], [-30, 30]);
-
   //const bgGoldY = useTransform(scrollYState, [0, 500], [0, 100]);
+  const moonStarY = useTransform(scrollYState, [0, 1000], [0, -160]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
   const star3Y = useTransform(scrollYState, [0, 1000], [0, -500]);
 
@@ -192,14 +165,17 @@ const SectionTwo = () => {
         </motion.div>
 
         <motion.div
-          // Apply the calculated position for moonStar
-          className={`absolute ${
+          //variants={createBlinkingAnimation(isBlinkingStar1)}
+          initial="initial"
+          animate="animate"
+          className={` absolute  ${
             locale === "/"
-              ? "right-[50%] md:right-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
-              : "left-[50%] md:left-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
+              ? "right-[50%] md:right-[50%] top-[10%] md:top-[13%] max-w-[30px] md:max-w-[40px] z-20"
+              : "right-[50%] md:right-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
           }`}
+          style={{ y: moonStarY }}
         >
-          <Image src={moonStar} alt="Moon Star" />
+          <Image src={moonStar} alt="Star 1" />
         </motion.div>
         <motion.div
           //variants={createBlinkingAnimation(isBlinkingStar1)}
@@ -207,10 +183,10 @@ const SectionTwo = () => {
           animate="animate"
           className={`absolute ${
             locale === "/"
-              ? "right-[10%] md:left-[45%] bottom-[10%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
-              : "left-[25%] md:left-[45%] bottom-[2%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
+              ? "right-[10%] md:left-[45%] bottom-[20%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
+              : "left-[10%] md:left-[45%] bottom-[2%] md:bottom-[13%] max-w-[10px] md:max-w-[20px] z-20"
           }`}
-          style={{ x: moonStarX, y: moonStarY }}
+          style={{ y: star2Y }}
         >
           <Image src={star5} alt="Star 1" />
         </motion.div>
@@ -220,7 +196,7 @@ const SectionTwo = () => {
           animate="animate"
           className={`absolute ${
             locale === "/"
-              ? "right-[10%] md:left-[43%] bottom-[10%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
+              ? "right-[20%] md:left-[43%] bottom-[10%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
               : "left-[20%] md:left-[43%] bottom-[20%] md:-bottom-[-8%] max-w-[10px] md:max-w-[10px] z-20"
           } max-w-[10px] md:max-w-[10px] z-20  `}
           style={{ y: star2Y }}
@@ -233,8 +209,8 @@ const SectionTwo = () => {
           animate="animate"
           className={`absolute ${
             locale === "/"
-              ? "left-[65%] md:left-[50%] bottom-[7%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
-              : "left-[30%] md:left-[50%] bottom-[10%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+              ? "right-[25%] md:left-[50%] bottom-[17%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
+              : "right-[65%] md:left-[50%] bottom-[10%] md:bottom-[8%] max-w-[10px] md:max-w-[10px] z-20"
           }`}
           style={{ y: star2Y }}
         >
