@@ -94,7 +94,7 @@ const SectionFour = () => {
             className={` text-white pt-4 md:pt-0
           ${
             locale === "/ar"
-              ? "font-Zain-Black text-5xl md:text-6xl text-right"
+              ? "font-Helvetica-Bold text-4xl md:text-6xl text-right"
               : "font-Gotham-Bold text-2xl md:text-3xl text-left"
           }
           `}
@@ -107,7 +107,7 @@ const SectionFour = () => {
             className={`text-white ${
               locale === "/"
                 ? "font-Gotham-Book text-lg md:text-xl "
-                : "font-GE-SS-Text-Light text-right text-lg md:text-xl"
+                : "font-Helvetica-Regular text-right text-lg md:text-xl"
             }`}
           />
         </div>

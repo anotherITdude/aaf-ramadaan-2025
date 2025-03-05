@@ -37,6 +37,16 @@
   src: url("../fonts/Zain-Black.ttf");
 }
 
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url("../fonts/helvetica-neue-lt-arabic-75-bold.ttf");
+}
+
+@font-face {
+  font-family: "Helvetica-Regular";
+  src: url("../fonts/HelveticaNeueLTArabic-Roman.ttf");
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }

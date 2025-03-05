@@ -27,7 +27,7 @@ const Navbar = () => {
         initial="hidden"
         animate={animationComplete ? "visible" : "hidden"}
         variants={navbarVariants}
-        className="md:pr-4 text-2xl"
+        className="md:pr-4 text-lg"
       >
         {locales.map((lang, index) => (
           <React.Fragment key={lang}>
@@ -35,8 +35,8 @@ const Navbar = () => {
               href={lang === "en" ? "/" : `/${lang}`}
               className={`${
                 locale === `/${lang}` || (locale === "/" && lang === "en")
-                  ? "text-gray-500 cursor-not-allowed underline animate-pulse underline-offset-4 font-Albus"
-                  : "text-black cursor-pointer font-Albus"
+                  ? "text-gray-500 cursor-not-allowed underline animate-pulse underline-offset-4 font-Gotham-Bold"
+                  : "text-black cursor-pointer font-Gotham-Bold"
               }`}
             >
               {lang === "ar" ? "Ar" : "En"}

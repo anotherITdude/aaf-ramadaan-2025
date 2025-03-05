@@ -33,6 +33,8 @@ export default {
 				'GE-SS-Text-Light': ["GE-SS-Text-Light"],
 				'GE-SS-Text-Medium': ["GE-SS-Text-Medium"],
 				'Zain-Black': ["Zain-Black"],
+				'Helvetica-Bold': ["Helvetica-Bold"],
+				'Helvetica-Regular': ["Helvetica-Regular"],
   			
   		},
   	}

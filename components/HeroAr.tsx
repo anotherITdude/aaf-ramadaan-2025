@@ -13,7 +13,7 @@ import star5 from "@/public/star5.png";
 import bg_product from "@/public/hero_products.png";
 import bg_gold from "@/public/bg_gold.png";
 import bg_gold_mobile from "@/public/bg_gold_mobile.png";
-import ramadaan_logo from "@/public/ramadaan_logo.png";
+import ramadaan_logo from "@/public/ramadan_ar_logo.png";
 import top_lamp from "@/public/top_left.png";
 import logo from "@/public/logo.png";
 
@@ -135,12 +135,13 @@ const Hero = () => {
             alt="Moon with Spoon"
           />
           <motion.div
+            dir={locale === "/ar" ? "rtl" : "ltr"}
             style={{ y: star1Y }}
             dangerouslySetInnerHTML={{ __html: t.herotitle }}
             className={`   z-50  text-secondary 
                 ${
                   locale === "/ar"
-                    ? "font-Zain-Black text-5xl md:text-6xl md:-ml-48 mt-16 sm:mt-20 md:mt-16"
+                    ? "font-Helvetica-Bold text-5xl md:text-6xl md:-ml-48 mt-16 sm:mt-20 md:mt-16"
                     : "font-Gotham-Bold text-2xl md:text-3xl mt-3 sm:mt-6 md:-ml-48 md:mt-20"
                 }
                 `}
@@ -237,7 +238,7 @@ const Hero = () => {
 
         <div className="md:absolute bottom-2 md:bottom-0 flex flex-row items-center justify-between w-full pl-2 md:pl-10 pr-2 md:pr-10">
           <motion.div
-            className="z-50 max-w-[150px] md:max-w-[300px] mt-[20%] md:mt-[18%]"
+            className="z-50 max-w-[150px] md:max-w-[230px] mt-[20%] md:mt-[18%]"
             initial={{ opacity: 0, x: "-10%" }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}

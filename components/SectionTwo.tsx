@@ -85,7 +85,7 @@ const SectionTwo = () => {
         {" "}
         <Navbar />
       </div>
-      <div className="absolute -right-12 -top-[62px] md:-right-14 md:-top-20 flex z-40 flex-row items-center justify-center">
+      <div className="absolute -right-8 -top-[54px] md:-right-14 md:-top-20 flex z-40 flex-row items-center justify-center">
         <Link href="/">
           <Image
             className=" max-w-[200px] md:max-w-[280px]"
@@ -103,18 +103,19 @@ const SectionTwo = () => {
             className={`${
               locale === "/"
                 ? "font-Gotham-Bold text-2xl md:text-3xl "
-                : "font-Zain-Black text-3xl md:text-4xl text-right   md:pr-4"
+                : "font-Helvetica-Bold text-3xl md:text-4xl text-right   md:pr-4"
             }`}
             dangerouslySetInnerHTML={{ __html: t.section2title }}
           />
           <motion.p
+            dir={locale === "/ar" ? "rtl" : "ltr"}
             initial={{ x: 20, opacity: 0 }} // Start off-screen to the left
             animate={{ x: 0, opacity: 1 }} // Move to its original position and fade in when in view
             transition={{ duration: 1 }}
             className={`${
               locale === "/"
                 ? "font-Gotham-Book text-lg md:text-xl"
-                : "font-GE-SS-Text-Light text-right text-lg md:text-xl md:pr-4"
+                : "font-Helvetica-Regular text-right text-lg md:text-xl md:pr-4"
             }`}
             dangerouslySetInnerHTML={{ __html: t.section2Paragraph }}
           />
