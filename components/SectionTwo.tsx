@@ -23,6 +23,10 @@ const SectionTwo = () => {
   const scrollYState = useMotionValue(0);
   const { scrollY } = useScroll();
 
+  // Create MotionValues for mouse position
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
   const [isBlinkingStar1, setIsBlinkingStar1] = useState(false);
   const [isBlinkingStar2, setIsBlinkingStar2] = useState(false);
 
@@ -32,8 +36,30 @@ const SectionTwo = () => {
     });
   }, [scrollY, scrollYState]);
 
+  // Effect to track mouse movement
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      mouseX.set(event.clientX);
+      mouseY.set(event.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [mouseX, mouseY]);
+
+  // Calculate the position for the moon image
+  // const moonX = useTransform(mouseX, [0, window.innerWidth], [-20, 20]);
+  // const moonY = useTransform(mouseY, [0, window.innerHeight], [-20, 20]);
+
+  // Calculate the position for the moonStar image
+  const moonStarX = useTransform(mouseX, [0, window.innerWidth], [-30, 30]);
+  const moonStarY = useTransform(mouseY, [0, window.innerHeight], [-30, 30]);
+
   //const bgGoldY = useTransform(scrollYState, [0, 500], [0, 100]);
-  const moonStarY = useTransform(scrollYState, [0, 1000], [0, -160]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
   const star3Y = useTransform(scrollYState, [0, 1000], [0, -500]);
 
@@ -165,17 +191,14 @@ const SectionTwo = () => {
         </motion.div>
 
         <motion.div
-          //variants={createBlinkingAnimation(isBlinkingStar1)}
-          initial="initial"
-          animate="animate"
-          className={` absolute  ${
+          style={{ x: moonStarX, y: moonStarY }} // Apply the calculated position for moonStar
+          className={`absolute ${
             locale === "/"
-              ? "right-[50%] md:right-[50%] top-[10%] md:top-[13%] max-w-[30px] md:max-w-[40px] z-20"
-              : "right-[50%] md:right-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
+              ? "right-[50%] md:right-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
+              : "left-[50%] md:left-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
           }`}
-          style={{ y: moonStarY }}
         >
-          <Image src={moonStar} alt="Star 1" />
+          <Image src={moonStar} alt="Moon Star" />
         </motion.div>
         <motion.div
           //variants={createBlinkingAnimation(isBlinkingStar1)}
