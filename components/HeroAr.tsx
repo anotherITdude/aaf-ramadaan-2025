@@ -49,11 +49,16 @@ const Hero = () => {
       mouseY.set(event.clientY);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    // Check if window is defined
+    if (typeof window !== "undefined") {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
 
     // Cleanup the event listener on unmount
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
     };
   }, [mouseX, mouseY]);
 

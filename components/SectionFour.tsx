@@ -20,7 +20,6 @@ const SectionFour = () => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      console.log("Scroll Y:", latest);
       scrollYState.set(latest);
     });
   }, [scrollY, scrollYState]);

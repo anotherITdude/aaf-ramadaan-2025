@@ -43,17 +43,22 @@ const SectionTwo = () => {
       mouseY.set(event.clientY);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    // Check if window is defined
+    if (typeof window !== "undefined") {
+      window.addEventListener("mousemove", handleMouseMove);
+    }
 
     // Cleanup the event listener on unmount
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("mousemove", handleMouseMove);
+      }
     };
   }, [mouseX, mouseY]);
 
   // Calculate the position for the moonStar image with a parallax effect
-  const moonStarX = useTransform(mouseX, [0, window.innerWidth], [-50, 50]);
-  const moonStarY = useTransform(mouseY, [0, window.innerHeight], [-50, 50]);
+  const moonStarX = useTransform(mouseX, [0, window.innerWidth], [-30, 30]);
+  const moonStarY = useTransform(mouseY, [0, window.innerHeight], [-30, 30]);
 
   //const bgGoldY = useTransform(scrollYState, [0, 500], [0, 100]);
   const star2Y = useTransform(scrollYState, [0, 1000], [0, -100]);
@@ -187,7 +192,7 @@ const SectionTwo = () => {
         </motion.div>
 
         <motion.div
-           // Apply the calculated position for moonStar
+          // Apply the calculated position for moonStar
           className={`absolute ${
             locale === "/"
               ? "right-[50%] md:right-[48%] top-[10%] md:top-[7%] max-w-[30px] md:max-w-[40px] z-20"
